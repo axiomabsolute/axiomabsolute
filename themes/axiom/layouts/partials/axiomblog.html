@@ -1,0 +1,11 @@
+<div class="content">
+  <div class="uk-grid">
+    {{ range first 10 .Data.Pages }}
+      <div class="uk-width-1-1">
+        {{ if eq .Type  "post" }}
+          {{ .Render "summary"}}
+        {{ end }}
+      </div>
+    {{ end }} 
+  </div>
+</div>

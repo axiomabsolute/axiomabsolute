@@ -1,0 +1,13 @@
+<article class="uk-article">
+    <h1><a href="{{ .Permalink }}">{{ .Title }} {{ if .Draft }}:: DRAFT{{end}}</a> </h1>
+    <p class="uk-article-meta">{{ .Date.Format "Mon, Jan 2, 2006" }} - Read in {{ .ReadingTime }} Min </p>
+    <p class="uk-article-lead">
+        {{ .Summary }}
+    </p>
+    <footer>
+        <a href='{{ .Permalink }}'>
+            <nobr>Read more →</nobr>
+        </a>
+    </footer>
+    <hr class="uk-article-divider">
+</article>

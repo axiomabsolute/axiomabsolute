@@ -1,0 +1,46 @@
+.callout {
+  width: 100%;
+  height: 100%;
+  background-image: url("/images/background.jpeg");
+  background-size: cover;
+  color: #EEE;
+  display: table;
+}
+
+.callout-panel {
+  max-width: 600px;
+  border-radius: 10px;
+  background-color: rgba(0,0,0, .25);
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.callout-panel_title {
+  text-align: center;
+}
+
+.callout-panel_description {
+  text-align: center;
+}
+
+.callout-wrapper {
+  display: table-cell;
+  vertical-align: middle;
+  position: relative;
+  padding: 0 60px;
+}
+
+.callout a {
+  color: #EEE;
+}
+
+.sidebar {
+  height: 100%;
+  background-image: url("/images/background.jpeg");
+  background-size: cover;
+}
+
+.content {
+  height: 100%;
+  overflow: auto;
+}
