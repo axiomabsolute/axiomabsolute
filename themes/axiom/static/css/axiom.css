@@ -9,7 +9,7 @@
 
 .callout-panel {
   max-width: 600px;
-  border-radius: 10px;
+  border-radius: 4px;
   background-color: rgba(0,0,0, .25);
   margin: 0 auto;
   padding: 20px;
@@ -36,6 +36,9 @@
 
 .sidebar {
   height: 100%;
+}
+
+.blog {
   background-image: url("/images/background.jpeg");
   background-size: cover;
 }
@@ -43,4 +46,21 @@
 .content {
   height: 100%;
   overflow: auto;
+}
+
+.post, .post-summary {
+  background: white;
+  padding: 40px 20px;
+  box-sizing: border-box;
+}
+
+a.see-through {
+  background-color: rgba(0,0,0,0);
+  color: white;
+  border: 1px solid white;
+  border-radius: 10px;
+}
+
+a.see-through:hover {
+  background-color: rgba(255,255,255,.2);
 }

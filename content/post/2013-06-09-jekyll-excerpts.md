@@ -4,7 +4,6 @@ title: Easy Jekyll Excerpts with Liquid Filters
 url: /2013/06/09/jekyll-excerpts
 ---
 
-
 Go ahead and look at this page's source.  Go on, do it! Notice the little excerpt comments?
 
 ```html
@@ -12,6 +11,8 @@ Go ahead and look at this page's source.  Go on, do it! Notice the little excerp
 
     <!-- excerpt-end -->
 ```
+
+> The original version of this article was written built with Jekyll.  This method is no longer used in the blog for generating excerpts.
 
 <!-- excerpt-begin -->
 Early on in my journey to learn [Jekyll] [2], sleep deprived but determined to figure out what all the fuss was about, I decided that I wanted a way to indicate small sections of each post to feature on the main page.  A quick Google search pointed me to a couple of Jekyll plugins that would get the job done, but [one guy] [3] mentioned another possible solution; [Liquid Filters] [1].
@@ -66,11 +67,6 @@ Using this technique, we can choose what content to include in the excerpt, incl
 When displaying anything but very basic HTML with this technique, you have to be a little careful.  The content of the tag block is pulled, but not the _styles_ applied outside of inline styles, which can lead to content being awkwardly layed out or displayed.  A simple way to mitigate this risk is to stick to site-wide styles, such as those referenced by the default layout or provided by the underlying client side framework (in my case, the [Foundation] [4] framework).
 
 I'm just getting started with Jekyll, but I'm beginning to appreciate the relative simplicity at the core of its philosophy.  I'm interested to see how far the community will push this new wave of interest in static websites, and what lessons they've yet to learn from the forefathers of the web, before the advent dynamic sites.
-
-_Examples:_
-* [Built in behavior](/examples/excerpt-separator.html)
-* [Truncate after fixed number of words](/examples/truncate-at-80.html)
-* [Including media in the excerpt](/examples/templates-everywhere-picture.html)
 
 [1]: https://github.com/Shopify/liquid/wiki/Liquid-for-Designers
 [2]: http://jekyllrb.com/
