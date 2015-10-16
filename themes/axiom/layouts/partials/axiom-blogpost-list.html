@@ -1,7 +1,7 @@
-<div class="content post-summary">
-  <div class="uk-grid">
+<div class="content">
+  <div class="pure-g post-summary">
     {{ range first 10 .Data.Pages }}
-      <div class="uk-width-1-1">
+      <div class="pure-u-1">
         {{ if eq .Type  "post" }}
           {{ .Render "summary"}}
         {{ end }}

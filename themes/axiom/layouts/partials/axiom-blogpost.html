@@ -1,0 +1,14 @@
+<div class="content">
+  <div class="pure-g post-summary">
+    <div class="pure-u-1">
+      <article class="post">
+          <h1>{{ .Title }} {{ if .Draft }}:: DRAFT{{end}}</h1>
+          <p class="post-meta">{{ .Date.Format "Mon, Jan 2, 2006" }} - Read in {{ .ReadingTime }} Min </p>
+          {{ .Content }}
+          <footer>
+          </footer>
+          <hr class="post-divider">
+      </article>
+    </div>
+  </div>
+</div>
