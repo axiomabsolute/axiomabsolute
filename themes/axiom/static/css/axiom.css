@@ -89,6 +89,35 @@
   background-color: rgba(255,255,255,.2);
 }
 
+.nav {
+  margin-top: 16px;
+}
+
+.nav-link, .social-link {
+  margin: 0 5px;
+}
+
+/* Traits */
+.right {
+  float: right;
+}
+
+.fa-2 {
+  font-size: 2em;
+}
+
+/* Responsive */
+
+@media screen and (max-width: 48em) {
+  .content {
+    height: auto;
+  }
+  .blog {
+    background-image: url("/images/banner.jpg");
+    background-size: contain;
+  }
+}
+
 /* Base Styles */
 
 article {
