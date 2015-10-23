@@ -1,0 +1,22 @@
+<div class="callout">
+  <div class="callout-wrapper">
+    <div class="callout-panel">
+      <h1 class="callout-panel_title">
+        <a href="{{ .Site.BaseURL }}/"  title="link to homepage for {{ .Site.Params.title }}">{{ .Site.Params.title }}</a>
+      </h1>
+      <div class="callout-panel_description">
+         {{ if .Site.Params.description }} {{ .Site.Params.description }} {{ else }} This site is built using <a href="http://gohugo.io">hugo</a> and the theme is built by <a href="http://axiomabsolute.github.io">AxiomAbsolute</a> if you enjoy it, it is available at <a href="javascript:alert('not implemented.')">github</a> {{end}} 
+      </div>
+      <div class="callout-panel_navigation">
+        <div class="nav pure-g">
+          <div class="nav-links pure-u-1-2">
+            <a class="nav-link pure-button see-through right" href="/post">Blog</a>
+          </div>
+          <div class="social-links pure-u-1-2">
+            <a class="social-link fa-2" href="http://github.com/axiomabsolute"><i class="fa fa-github-square"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

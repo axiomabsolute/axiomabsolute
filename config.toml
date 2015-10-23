@@ -1,17 +1,20 @@
-baseurl = "http://replace-this-with-your-hugo-site.com/"
+baseurl = "http://axiomabsolute.github.com/"
 languageCode = "en-us"
 title = "AxiomAbsolute"
 author = "AxiomAbsolute"
 contentdir = "content"
 publishdir = "public"
 description = "Thoughts on programming, language, and maths"
+metaDataFormat= "toml"
 
 [indexes]
   category = "categories"
   tag = "tags"
-[Params]
+
+[params]
   AuthorName = "Devon"
   github = "axiomabsolute"
+  title = "Axiom Absolute"
   email = "axiomabsolute@gmail.com"
   cover = "https://static.pexels.com/photos/7462/pexels-photo.jpeg"
   description = "Thoughts on programming, language, and maths"
