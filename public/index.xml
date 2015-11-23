@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>AxiomAbsolute</title>
-    <link>http://axiomabsolute.github.com/</link>
+    <link>http://axiomabsolute.github.com/axiomabsolute/</link>
     <description>Recent content on AxiomAbsolute</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 20 Jun 2014 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://axiomabsolute.github.com/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://axiomabsolute.github.com/axiomabsolute/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Getting Started with Tessel</title>
-      <link>http://axiomabsolute.github.com/2014/06/20/tessel-one</link>
+      <link>http://axiomabsolute.github.com/axiomabsolute/2014/06/20/tessel-one</link>
       <pubDate>Fri, 20 Jun 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://axiomabsolute.github.com/2014/06/20/tessel-one</guid>
+      <guid>http://axiomabsolute.github.com/axiomabsolute/2014/06/20/tessel-one</guid>
       <description>
 
 &lt;p&gt;I’m a software guy.  I’ve taken the requisite college classes and understand how the programs I write eventually compile down to machine instructions and how they’re executed on the underlying hardware, but the idea of working directly with embedded systems for side projects at home has always been a little daunting.  I haven’t touched C, C++, or similarly low-level languages in several years, and haven’t had much cause in my professional work to look into embedded devices, but learning to work on these types of platforms has always had a kind of mysterious allure for me.&lt;/p&gt;
@@ -56,7 +56,7 @@
 
 &lt;p&gt;A couple of the modules take a little bit of extra work to get started with, because they require interfacing with outside components, including the Bluetooth and Servo motor modules, so I haven’t started playing around with them yet.  I’d also like to get rid of the power cable tethering this little beast to my desktop so I can start making real use of the onboard WiFi feature.  I bought a small &lt;a href=&#34;http://www.amazon.com/Anker-Ultra-Compact-Lipstick-Sized-ThunderBolt-Blackberry/dp/B005NF5NTK/ref=sr_1_11?ie=UTF8&amp;amp;qid=1377998755&amp;amp;sr=8-11&amp;amp;keywords=usb+battery&#34;&gt;rechargeable USB power supply&lt;/a&gt; to attach to the board, which their website assure me should be more than sufficient for most uses for at least a day, even with consistent WiFi activity.  Over the next few weeks I’ll focus on trying out the different modules and keeping my eye out for better uses than taking bad selfies.&lt;/p&gt;
 
-&lt;p&gt;&lt;img alt=&#34;Selfie from the Tessel&#34; src=&#34;http://axiomabsolute.github.com/images/picture-270674081.jpg&#34; style=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&#34;Selfie from the Tessel&#34; src=&#34;http://axiomabsolute.github.com/axiomabsolute/images/picture-270674081.jpg&#34; style=&#34;&#34;&gt;&lt;/p&gt;
 
 &lt;p&gt;The experience in general has ignited my interest in this space, a natural bridge from working with data analytics technologies down to the sensors that collect that data.  The explosion of easy to use microcontrollers and barebones PCs over the last fews years, first with the gain in popularity of the Arduino system, then the internet’s fascination with the Raspberry Pi computer, has lead to a wave of innovative and interesting at-home projects.  These platforms, which advertise themselves specifically as prototyping or learning platforms, may not be representative of working with production quality embedded systems, but they provide an easier path for newcomers who don’t have a background working with low-level systems.&lt;/p&gt;
 </description>
@@ -64,10 +64,10 @@
     
     <item>
       <title>Composition through Concatenation</title>
-      <link>http://axiomabsolute.github.com/2014/06/15/composition-through-concatenation</link>
+      <link>http://axiomabsolute.github.com/axiomabsolute/2014/06/15/composition-through-concatenation</link>
       <pubDate>Sun, 15 Jun 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://axiomabsolute.github.com/2014/06/15/composition-through-concatenation</guid>
+      <guid>http://axiomabsolute.github.com/axiomabsolute/2014/06/15/composition-through-concatenation</guid>
       <description>
 
 &lt;p&gt;Composition is a key aspect of successful design, both in art and engineering.  Breaking creations down into smaller, reusable patterns lends familiarity to novel designs, providing both a starting point and guiding path for evolving new user experiences.  The value of composition is especially apparent in software engineering, where both the costs of developing as well as maintaining and improving an application over time have a significant impact on the lifetime profitability of the product.  A particular type of composition, which I will refer to as Concatenative Composition, has proven to be particularly flexible and concise.&lt;/p&gt;
@@ -266,10 +266,10 @@ This command, which is seemingly arbitrary to new users, is actually made up of 
     
     <item>
       <title>Virginia Tech Recruiting 2013</title>
-      <link>http://axiomabsolute.github.com/2013/10/15/vt-recruiting-1</link>
+      <link>http://axiomabsolute.github.com/axiomabsolute/2013/10/15/vt-recruiting-1</link>
       <pubDate>Tue, 15 Oct 2013 00:00:00 +0000</pubDate>
       
-      <guid>http://axiomabsolute.github.com/2013/10/15/vt-recruiting-1</guid>
+      <guid>http://axiomabsolute.github.com/axiomabsolute/2013/10/15/vt-recruiting-1</guid>
       <description>&lt;!-- excerpt-begin --&gt;
 
 &lt;p&gt;Sphere of Influence has been attending various career fairs at Virginia Tech for the last several years, looking for the best and brightest students to hire as interns and future full time employees.  We&amp;rsquo;ve found it difficult, however, to shape an interview process appropriate for students at various stages in their education.  This year we decided to do something to help fix that.
@@ -281,12 +281,12 @@ This command, which is seemingly arbitrary to new users, is actually made up of 
 
 &lt;p&gt;We needed &lt;em&gt;data&lt;/em&gt;.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;http://axiomabsolute.github.com/images/wordassoc.PNG&#34; alt=&#34;WordAssoc&#34; /&gt;
+&lt;p&gt;&lt;img src=&#34;http://axiomabsolute.github.com/axiomabsolute/images/wordassoc.PNG&#34; alt=&#34;WordAssoc&#34; /&gt;
 &lt;/p&gt;
 
 &lt;p&gt;So I decided to create a game &amp;lt;!&amp;ndash; Link to game &amp;ndash;&amp;gt; for students to play while waiting to talk to us at the recruiting event.  To keep the game fast paced and interesting (as well as to gather as much data as possible), we decided to go with a word association game.  The format of the game is simple.  Students select what technologies they know from a preselected list of technologies the students might be familiar with that SOI is interested in.  The system then selects from key terms and phrases associated with the technologies the user selected and generates answers based on the type of term asked.  The user&amp;rsquo;s job, then, is to select which technology the term is associated with.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;http://axiomabsolute.github.com/images/wordassoc-question-sample.PNG&#34; alt=&#34;WordAssoc Question&#34; /&gt;
+&lt;p&gt;&lt;img src=&#34;http://axiomabsolute.github.com/axiomabsolute/images/wordassoc-question-sample.PNG&#34; alt=&#34;WordAssoc Question&#34; /&gt;
 &lt;/p&gt;
 
 &lt;p&gt;In addition to phrases tied to specific technologies, we included several phrases we&amp;rsquo;d expect candidates to recognize, from topics like Object-Oriented Programming, data structures, algorithm analysis, and basic programming terms.  Together with the user-selected technologies, this strategy ensured that users would get a customized game experience with a variety of questions across several topics.&lt;/p&gt;
@@ -297,7 +297,7 @@ This command, which is seemingly arbitrary to new users, is actually made up of 
 
 &lt;p&gt;But what good is a game without motivation, though?  Each question the player answered correctly contributed to their overall score, while wrong answers counted against them.  At the end of the day, the player with the highest score won an iPad mini; the same device that they were using to play the game on!  In addition, every player is able to view the source for the game, an anonymized result dataset, and any analysis we&amp;rsquo;ve done on the data.  Here&amp;rsquo;s a peek at some of the results we found:&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;http://axiomabsolute.github.com/images/VTFeedbackInfographic.png&#34; alt=&#34;Infographic&#34; /&gt;
+&lt;p&gt;&lt;img src=&#34;http://axiomabsolute.github.com/axiomabsolute/images/VTFeedbackInfographic.png&#34; alt=&#34;Infographic&#34; /&gt;
 &lt;/p&gt;
 
 &lt;p&gt;I chose to do the analysis in an interactive Python session using the Numpy and Matplotlib libraries.  I saved off the various data as JSON and used the fantastic JavaScript library D3.js to generate SVG files for the custom visualizations.  Finally, I imported the visualizations into the Inkscape SVG editor to lay them out, provide contextual information, and style everything.  I would have liked to dig deeper into the data and pull out a few more statistics to drive the visualization further, but this was my first infographic and so my progress was a little slow, and I wanted to get this out since we&amp;rsquo;re now a month past the event and starting to do interviews.&lt;/p&gt;
@@ -316,10 +316,10 @@ This command, which is seemingly arbitrary to new users, is actually made up of 
     
     <item>
       <title>Easy Jekyll Excerpts with Liquid Filters</title>
-      <link>http://axiomabsolute.github.com/2013/06/09/jekyll-excerpts</link>
+      <link>http://axiomabsolute.github.com/axiomabsolute/2013/06/09/jekyll-excerpts</link>
       <pubDate>Sun, 09 Jun 2013 00:00:00 +0000</pubDate>
       
-      <guid>http://axiomabsolute.github.com/2013/06/09/jekyll-excerpts</guid>
+      <guid>http://axiomabsolute.github.com/axiomabsolute/2013/06/09/jekyll-excerpts</guid>
       <description>&lt;p&gt;Go ahead and look at this page&amp;rsquo;s source.  Go on, do it! Notice the little excerpt comments?&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-html&#34;&gt;    &amp;lt;!-- excerpt-begin --&amp;gt;
@@ -389,10 +389,10 @@ This command, which is seemingly arbitrary to new users, is actually made up of 
     
     <item>
       <title>Response - I Wish Ruby Had Interfaces</title>
-      <link>http://axiomabsolute.github.com/post/2013/03/08/response-ruby-interfaces/</link>
+      <link>http://axiomabsolute.github.com/axiomabsolute/post/2013/03/08/response-ruby-interfaces/</link>
       <pubDate>Fri, 08 Mar 2013 00:00:00 +0000</pubDate>
       
-      <guid>http://axiomabsolute.github.com/post/2013/03/08/response-ruby-interfaces/</guid>
+      <guid>http://axiomabsolute.github.com/axiomabsolute/post/2013/03/08/response-ruby-interfaces/</guid>
       <description>
 
 &lt;p&gt;This post is written in response to a &lt;a href=&#34;http://victorsavkin.com/post/44861723903/i-wish-ruby-had-interfaces&#34;&gt;blog post&lt;/a&gt; about the role of documentation and types in interface definition.&lt;/p&gt;
