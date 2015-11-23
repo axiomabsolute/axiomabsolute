@@ -56,7 +56,7 @@
 
 &lt;p&gt;A couple of the modules take a little bit of extra work to get started with, because they require interfacing with outside components, including the Bluetooth and Servo motor modules, so I haven’t started playing around with them yet.  I’d also like to get rid of the power cable tethering this little beast to my desktop so I can start making real use of the onboard WiFi feature.  I bought a small &lt;a href=&#34;http://www.amazon.com/Anker-Ultra-Compact-Lipstick-Sized-ThunderBolt-Blackberry/dp/B005NF5NTK/ref=sr_1_11?ie=UTF8&amp;amp;qid=1377998755&amp;amp;sr=8-11&amp;amp;keywords=usb+battery&#34;&gt;rechargeable USB power supply&lt;/a&gt; to attach to the board, which their website assure me should be more than sufficient for most uses for at least a day, even with consistent WiFi activity.  Over the next few weeks I’ll focus on trying out the different modules and keeping my eye out for better uses than taking bad selfies.&lt;/p&gt;
 
-&lt;p&gt;&lt;img alt=&#34;Selfie from the Tessel&#34; src=&#34;http://axiomabsolute.github.com/axiomabsolute/images/picture-270674081.jpg&#34; style=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&#34;Selfie from the Tessel&#34; src=&#34;http://axiomabsolute.github.com/axiomabsolute/axiomabsolute/images/picture-270674081.jpg&#34; style=&#34;&#34;&gt;&lt;/p&gt;
 
 &lt;p&gt;The experience in general has ignited my interest in this space, a natural bridge from working with data analytics technologies down to the sensors that collect that data.  The explosion of easy to use microcontrollers and barebones PCs over the last fews years, first with the gain in popularity of the Arduino system, then the internet’s fascination with the Raspberry Pi computer, has lead to a wave of innovative and interesting at-home projects.  These platforms, which advertise themselves specifically as prototyping or learning platforms, may not be representative of working with production quality embedded systems, but they provide an easier path for newcomers who don’t have a background working with low-level systems.&lt;/p&gt;
 </description>
@@ -281,12 +281,12 @@ This command, which is seemingly arbitrary to new users, is actually made up of 
 
 &lt;p&gt;We needed &lt;em&gt;data&lt;/em&gt;.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;http://axiomabsolute.github.com/axiomabsolute/images/wordassoc.PNG&#34; alt=&#34;WordAssoc&#34; /&gt;
+&lt;p&gt;&lt;img src=&#34;http://axiomabsolute.github.com/axiomabsolute/axiomabsolute/images/wordassoc.PNG&#34; alt=&#34;WordAssoc&#34; /&gt;
 &lt;/p&gt;
 
 &lt;p&gt;So I decided to create a game &amp;lt;!&amp;ndash; Link to game &amp;ndash;&amp;gt; for students to play while waiting to talk to us at the recruiting event.  To keep the game fast paced and interesting (as well as to gather as much data as possible), we decided to go with a word association game.  The format of the game is simple.  Students select what technologies they know from a preselected list of technologies the students might be familiar with that SOI is interested in.  The system then selects from key terms and phrases associated with the technologies the user selected and generates answers based on the type of term asked.  The user&amp;rsquo;s job, then, is to select which technology the term is associated with.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;http://axiomabsolute.github.com/axiomabsolute/images/wordassoc-question-sample.PNG&#34; alt=&#34;WordAssoc Question&#34; /&gt;
+&lt;p&gt;&lt;img src=&#34;http://axiomabsolute.github.com/axiomabsolute/axiomabsolute/images/wordassoc-question-sample.PNG&#34; alt=&#34;WordAssoc Question&#34; /&gt;
 &lt;/p&gt;
 
 &lt;p&gt;In addition to phrases tied to specific technologies, we included several phrases we&amp;rsquo;d expect candidates to recognize, from topics like Object-Oriented Programming, data structures, algorithm analysis, and basic programming terms.  Together with the user-selected technologies, this strategy ensured that users would get a customized game experience with a variety of questions across several topics.&lt;/p&gt;
@@ -297,7 +297,7 @@ This command, which is seemingly arbitrary to new users, is actually made up of 
 
 &lt;p&gt;But what good is a game without motivation, though?  Each question the player answered correctly contributed to their overall score, while wrong answers counted against them.  At the end of the day, the player with the highest score won an iPad mini; the same device that they were using to play the game on!  In addition, every player is able to view the source for the game, an anonymized result dataset, and any analysis we&amp;rsquo;ve done on the data.  Here&amp;rsquo;s a peek at some of the results we found:&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;http://axiomabsolute.github.com/axiomabsolute/images/VTFeedbackInfographic.png&#34; alt=&#34;Infographic&#34; /&gt;
+&lt;p&gt;&lt;img src=&#34;http://axiomabsolute.github.com/axiomabsolute/axiomabsolute/images/VTFeedbackInfographic.png&#34; alt=&#34;Infographic&#34; /&gt;
 &lt;/p&gt;
 
 &lt;p&gt;I chose to do the analysis in an interactive Python session using the Numpy and Matplotlib libraries.  I saved off the various data as JSON and used the fantastic JavaScript library D3.js to generate SVG files for the custom visualizations.  Finally, I imported the visualizations into the Inkscape SVG editor to lay them out, provide contextual information, and style everything.  I would have liked to dig deeper into the data and pull out a few more statistics to drive the visualization further, but this was my first infographic and so my progress was a little slow, and I wanted to get this out since we&amp;rsquo;re now a month past the event and starting to do interviews.&lt;/p&gt;
