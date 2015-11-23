@@ -5,7 +5,7 @@ Blog and personal website set up using Hugo.  The "public" directory is a git su
 ## Running
 
 Run with custom theme
-`hugo server --theme=axiom --buildDrafts`
+`hugo server --watch --theme=axiom --buildDrafts`
 
 ## Deploying
 
