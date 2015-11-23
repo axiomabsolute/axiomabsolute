@@ -47,7 +47,7 @@
 }
 
 .blog, .landing {
-  background-image: url("/axiomabsolute/images/background-lowres.jpg");
+  background-image: url("/images/background-lowres.jpg");
   background-size: cover;
 }
 
@@ -113,7 +113,7 @@
     background-image: none;
   }
   .sidebar {
-    background-image: url("/axiomabsolute/images/banner-lowres.jpg");
+    background-image: url("/images/banner-lowres.jpg");
     background-size: cover;
   }
   .callout {

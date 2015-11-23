@@ -15,11 +15,11 @@ We needed to find a way to differentiate between candidates, to find which quest
 
 We needed _data_.
 
-![WordAssoc](/axiomabsolute/images/wordassoc.PNG)
+![WordAssoc](/images/wordassoc.PNG)
 
 So I decided to create a game <!-- Link to game --> for students to play while waiting to talk to us at the recruiting event.  To keep the game fast paced and interesting (as well as to gather as much data as possible), we decided to go with a word association game.  The format of the game is simple.  Students select what technologies they know from a preselected list of technologies the students might be familiar with that SOI is interested in.  The system then selects from key terms and phrases associated with the technologies the user selected and generates answers based on the type of term asked.  The user's job, then, is to select which technology the term is associated with.
 
-![WordAssoc Question](/axiomabsolute/images/wordassoc-question-sample.PNG)
+![WordAssoc Question](/images/wordassoc-question-sample.PNG)
 
 In addition to phrases tied to specific technologies, we included several phrases we'd expect candidates to recognize, from topics like Object-Oriented Programming, data structures, algorithm analysis, and basic programming terms.  Together with the user-selected technologies, this strategy ensured that users would get a customized game experience with a variety of questions across several topics.
 
@@ -29,7 +29,7 @@ This was my first time using Heroku (or any PaaS provider) for anything more tha
 
 But what good is a game without motivation, though?  Each question the player answered correctly contributed to their overall score, while wrong answers counted against them.  At the end of the day, the player with the highest score won an iPad mini; the same device that they were using to play the game on!  In addition, every player is able to view the source for the game, an anonymized result dataset, and any analysis we've done on the data.  Here's a peek at some of the results we found:
 
-![Infographic](/axiomabsolute/images/VTFeedbackInfographic.png)
+![Infographic](/images/VTFeedbackInfographic.png)
 
 I chose to do the analysis in an interactive Python session using the Numpy and Matplotlib libraries.  I saved off the various data as JSON and used the fantastic JavaScript library D3.js to generate SVG files for the custom visualizations.  Finally, I imported the visualizations into the Inkscape SVG editor to lay them out, provide contextual information, and style everything.  I would have liked to dig deeper into the data and pull out a few more statistics to drive the visualization further, but this was my first infographic and so my progress was a little slow, and I wanted to get this out since we're now a month past the event and starting to do interviews.
 
