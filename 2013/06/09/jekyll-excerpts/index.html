@@ -1,0 +1,122 @@
+<html>
+  <head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
+  <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/grids-responsive-min.css">
+  <link rel="stylesheet" href="/css/axiom.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+</head>
+  <body>
+    <div class="pure-g blog">
+      <div class="pure-u-1 pure-u-md-8-24 pure-u-xl-6-24">
+      <div class="sidebar">
+  <div class="callout">
+  <div class="callout-wrapper">
+    <div class="callout-panel">
+      <h1 class="callout-panel_title">
+        <a href="http://axiomabsolute.github.com//"  title="link to homepage for Axiom Absolute">Axiom Absolute</a>
+      </h1>
+      <div class="callout-panel_description">
+          Thoughts on programming, language, and maths  
+      </div>
+      <div class="callout-panel_navigation">
+        <div class="nav pure-g">
+          <div class="nav-links pure-u-1-2">
+            <a class="nav-link pure-button see-through right" href="/post">Blog</a>
+          </div>
+          <div class="social-links pure-u-1-2">
+            <a class="social-link fa-2" href="http://github.com/axiomabsolute"><i class="fa fa-github-square"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+      </div>
+      <div class="pure-u-1 pure-u-md-16-24 pure-u-xl-18-24">
+<div class="content">
+  <div class="pure-g post-summary">
+    <div class="pure-u-1">
+      <article class="post">
+          <h1>Easy Jekyll Excerpts with Liquid Filters </h1>
+          <p class="post-meta">Sun, Jun 9, 2013 - Read in 4 Min </p>
+          <p>Go ahead and look at this page&rsquo;s source.  Go on, do it! Notice the little excerpt comments?</p>
+
+<pre><code class="language-html">    &lt;!-- excerpt-begin --&gt;
+
+    &lt;!-- excerpt-end --&gt;
+</code></pre>
+
+<blockquote>
+<p>The original version of this article was written built with Jekyll.  This method is no longer used in the blog for generating excerpts.</p>
+</blockquote>
+
+<!-- excerpt-begin -->
+
+<p>Early on in my journey to learn <a href="http://jekyllrb.com/">Jekyll</a>, sleep deprived but determined to figure out what all the fuss was about, I decided that I wanted a way to indicate small sections of each post to feature on the main page.  A quick Google search pointed me to a couple of Jekyll plugins that would get the job done, but <a href="http://foldl.me/2012/jekyll-excerpts/">one guy</a> mentioned another possible solution; <a href="https://github.com/Shopify/liquid/wiki/Liquid-for-Designers">Liquid Filters</a>.
+&lt;!&ndash; excerpt-end &ndash;&gt;</p>
+
+<p>Liquid is a secure, stateless template engine used by Jekyll to provide basic logic and looping behavior to the static pages it generates.  In addition, Liquid includes filters - operations for manipulating both numerical and string based content.  The original functionality described in the post was eventually added as a built in feature of Jekyll; the parser looks for all text up until the first occurrance of <code>excerpt_separator</code> (a YAML front-matter property which defaults to <code>\n\n</code>) and sets that to the post&rsquo;s <code>excerpt</code> property.  I decided to expand on the concept the author outlined to provide slightly different functionality.</p>
+
+<p>The first thing I did was add a second tag, allowing the excerpt to appear anywhere in the page.  Notice that in this page, the excerpt isn&rsquo;t right at the beginning of the page, but can potentially come after other content, like a graphic or, in this case, a small code block.</p>
+
+<p>Extracting the excerpts for the main page was as simple as filtering the content down to the section I wanted by looking for the tags.  No plugins, no custom code, just a bit of convention!  Knowing my habits, however, at some point I&rsquo;ll forget to add the <code>&lt;!-- excerpt-* --&gt;</code> tags, so I decided to add some default behavior, truncating the content after a certain number of words.</p>
+
+<pre><code class="language-html">    {% raw %}
+    {% if post.content contains '&lt;!-- excerpt-begin --&gt;' &amp;&amp; post.content contains '&lt;!-- excerpt-end --&gt;' %}
+        &lt;div class=&quot;row&quot;&gt;
+            &lt;div class=&quot;small-12 large-12 columns&quot;&gt;
+                &lt;p&gt;&lt;em&gt;excert&lt;/em&gt;&lt;/p&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;row&quot;&gt;
+            &lt;div class=&quot;small-12 large-12 columns&quot;&gt;
+                {{ post.content | split: '&lt;!-- excerpt-begin --&gt;' | last | split: '&lt;!-- excerpt-end --&gt;' | first }}
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;row&quot;&gt;
+            &lt;div class=&quot;small-12 large-12 columns&quot;&gt;
+                &lt;p&gt;&lt;em&gt;&lt;a href=&quot;{{ post.url }}&quot;&gt;full article&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    {% else %}
+        &lt;div class=&quot;row&quot;&gt;
+            &lt;div class=&quot;small-12 large-12 columns&quot;&gt;
+                {% if post.truncate %}
+                    &lt;p&gt;{{ post.content | truncatewords: post.truncate }}&lt;/p&gt;
+                {% else %}
+                    &lt;p&gt;{{ post.excerpt }}&lt;/p&gt;
+                {% endif %}
+                &lt;em&gt;&lt;a href=&quot;{{ post.url }}&quot;&gt;continue...&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    {% endif %}
+    {% if forloop.index != forloop.length %}
+        &lt;hr/&gt;
+    {% endif %}
+    {% endraw %}
+</code></pre>
+
+<p>To make this behavior a little more configurable, a little logic around the truncation method first looks for a <code>truncate</code> variable defined in the post&rsquo;s YAML front-matter.  Finally, if that&rsquo;s not found, it falls back to the default <code>excerpt</code> functionality.</p>
+
+<p>Using this technique, we can choose what content to include in the excerpt, including not just text but fully formatted portions of the overall post, including images and other media.  We could even use this technique to create a custom excerpt for the post that doesn&rsquo;t appear anywhere in the article itself, like creating a custom tag line to grab the readers attention, selectively displaying the content in the <code>excerpt-*</code> block by comparing the <code>page.url</code> to the <code>post.url</code>.</p>
+
+<p>When displaying anything but very basic HTML with this technique, you have to be a little careful.  The content of the tag block is pulled, but not the <em>styles</em> applied outside of inline styles, which can lead to content being awkwardly layed out or displayed.  A simple way to mitigate this risk is to stick to site-wide styles, such as those referenced by the default layout or provided by the underlying client side framework (in my case, the <a href="http://foundation.zurb.com/">Foundation</a> framework).</p>
+
+<p>I&rsquo;m just getting started with Jekyll, but I&rsquo;m beginning to appreciate the relative simplicity at the core of its philosophy.  I&rsquo;m interested to see how far the community will push this new wave of interest in static websites, and what lessons they&rsquo;ve yet to learn from the forefathers of the web, before the advent dynamic sites.</p>
+
+          <footer>
+          </footer>
+          <hr class="post-divider">
+      </article>
+    </div>
+  </div>
+</div>
+      </div>
+    </div>
+    
+  </body>
+</html>

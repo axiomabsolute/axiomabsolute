@@ -1,0 +1,473 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on AxiomAbsolute</title>
+    <link>http://axiomabsolute.github.com/post/</link>
+    <description>Recent content in Posts on AxiomAbsolute</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 20 Jun 2014 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://axiomabsolute.github.com/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Getting Started with Tessel</title>
+      <link>http://axiomabsolute.github.com/2014/06/20/tessel-one</link>
+      <pubDate>Fri, 20 Jun 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://axiomabsolute.github.com/2014/06/20/tessel-one</guid>
+      <description>
+
+&lt;p&gt;I’m a software guy.  I’ve taken the requisite college classes and understand how the programs I write eventually compile down to machine instructions and how they’re executed on the underlying hardware, but the idea of working directly with embedded systems for side projects at home has always been a little daunting.  I haven’t touched C, C++, or similarly low-level languages in several years, and haven’t had much cause in my professional work to look into embedded devices, but learning to work on these types of platforms has always had a kind of mysterious allure for me.&lt;/p&gt;
+
+&lt;p&gt;Back in October of 2013, I stumbled upon a crowd-funded project named &lt;a href=&#34;https://tessel.io/&#34;&gt;Tessel&lt;/a&gt;, a microcontroller designed to be controlled wirelessly through the internet using an unconventional platform for embedded devices; JavaScript.&lt;/p&gt;
+
+&lt;p&gt;I’m sure hardcore embedded system developers are frothing in outrage, and I’ll not disagree that JavaScript probably isn’t the best language to use in a CPU/memory constrained production environment, but the unconventional platform sounded appealing as a developer with some experience in web development, curious about writing programs that not only interact with users through visual displays, but through direct communication with their environment.  So I decided to give it a shot.&lt;/p&gt;
+
+&lt;h2 id=&#34;getting-set-up:3437ae7b9c279671213431583aeb46bf&#34;&gt;Getting set up&lt;/h2&gt;
+
+&lt;p&gt;One of the biggest hassles with embedded devices is getting the environment up and running; the drivers, compiler, programming environment, not to mention getting the individual components and getting them to work with one another.  I decided to take my first crack at working with Tessel on a Windows machine; my desktop gaming computer I use at home.  First step, go to the Tessel site and install the command line utility for working with the system; a simple node.js package&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;npm install -g https://builds.tessel.io/cli/tessel-cli-current.tar.gz
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;All that’s left is to plug it in an test out the command line utility by ensuring that the software on the Tessel board is up to date.  After a couple of minutes, where Windows fetches the appropriate drivers and installs them automatically, I’m ready to run my first Tessel command:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;tessel update
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Success!  The online tutorial quickly introduces what I suspect is the microcontroller equivalent to “Hello, world” - making some LEDs blink.&lt;/p&gt;
+
+&lt;h2 id=&#34;developing-for-tessel:3437ae7b9c279671213431583aeb46bf&#34;&gt;Developing for Tessel&lt;/h2&gt;
+
+&lt;p&gt;The Tessel consists of a single, base board (which has our “Hello, World” LEDs on it) with four ports for adding in additional Modules, which host a range of other sensors and components designed to interact with the environment.  Most of the components are fairly simple to use: plug them into any port, download the appropriate NPM module, and you’re good to go.&lt;/p&gt;
+
+&lt;p&gt;One nice thing to note, the name of each module is printed directly on the board of the component, which corresponds exactly with both the NPM package used to interface with that particular module as well as a named GitHub repository hosting documentation and examples.  For instance, one of the sensors is capable of detecting ambient light and sound (in the form of coarse luminosity and decibel readings) and is called, appropriately, the ambient module.   The name of the component, ambient-attx4, is printed directly on the module, making getting started with the module as easy as&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;npm install ambient-attx4
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;and clicking on the link to &lt;a href=&#34;https://github.com/tessel/ambient-attx4&#34;&gt;tessel/ambient-attx4&lt;/a&gt; on GitHub.&lt;/p&gt;
+
+&lt;p&gt;This highlights the biggest advantage to using Tessel.  In about twenty minutes I was able to take timed temperature and humidity readings, setup triggered events at arbitrary light and sound thresholds, and even take a selfie through the tiny camera module, albeit at an embarrassingly poor resolution.  The documentation is extremely consistent, fairly straight to the point, and easy to get started with, using tools and languages I’m already familiar with.&lt;/p&gt;
+
+&lt;p&gt;Lastly, the system gets a big boost in usability in the development cycle department.  Code changes are as simple as saving a file and typing tessel run to package up, deploy, and run the code on the device.&lt;/p&gt;
+
+&lt;h2 id=&#34;next-steps:3437ae7b9c279671213431583aeb46bf&#34;&gt;Next steps&lt;/h2&gt;
+
+&lt;p&gt;A couple of the modules take a little bit of extra work to get started with, because they require interfacing with outside components, including the Bluetooth and Servo motor modules, so I haven’t started playing around with them yet.  I’d also like to get rid of the power cable tethering this little beast to my desktop so I can start making real use of the onboard WiFi feature.  I bought a small &lt;a href=&#34;http://www.amazon.com/Anker-Ultra-Compact-Lipstick-Sized-ThunderBolt-Blackberry/dp/B005NF5NTK/ref=sr_1_11?ie=UTF8&amp;amp;qid=1377998755&amp;amp;sr=8-11&amp;amp;keywords=usb+battery&#34;&gt;rechargeable USB power supply&lt;/a&gt; to attach to the board, which their website assure me should be more than sufficient for most uses for at least a day, even with consistent WiFi activity.  Over the next few weeks I’ll focus on trying out the different modules and keeping my eye out for better uses than taking bad selfies.&lt;/p&gt;
+
+&lt;p&gt;&lt;img alt=&#34;Selfie from the Tessel&#34; src=&#34;http://axiomabsolute.github.com/images/picture-270674081.jpg&#34; style=&#34;&#34;&gt;&lt;/p&gt;
+
+&lt;p&gt;The experience in general has ignited my interest in this space, a natural bridge from working with data analytics technologies down to the sensors that collect that data.  The explosion of easy to use microcontrollers and barebones PCs over the last fews years, first with the gain in popularity of the Arduino system, then the internet’s fascination with the Raspberry Pi computer, has lead to a wave of innovative and interesting at-home projects.  These platforms, which advertise themselves specifically as prototyping or learning platforms, may not be representative of working with production quality embedded systems, but they provide an easier path for newcomers who don’t have a background working with low-level systems.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Composition through Concatenation</title>
+      <link>http://axiomabsolute.github.com/2014/06/15/composition-through-concatenation</link>
+      <pubDate>Sun, 15 Jun 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://axiomabsolute.github.com/2014/06/15/composition-through-concatenation</guid>
+      <description>
+
+&lt;p&gt;Composition is a key aspect of successful design, both in art and engineering.  Breaking creations down into smaller, reusable patterns lends familiarity to novel designs, providing both a starting point and guiding path for evolving new user experiences.  The value of composition is especially apparent in software engineering, where both the costs of developing as well as maintaining and improving an application over time have a significant impact on the lifetime profitability of the product.  A particular type of composition, which I will refer to as Concatenative Composition, has proven to be particularly flexible and concise.&lt;/p&gt;
+
+&lt;h2 id=&#34;types-of-composition:8657397b7a825a5db528ba445c6f494f&#34;&gt;Types of composition&lt;/h2&gt;
+
+&lt;p&gt;There are several types of composition commonly used in software development, which are easily expressed in most modern languages.
+The first, &lt;em&gt;aggregation&lt;/em&gt;, forms new components by assembling sub-components, allowing the sub-components to be referenced elsewhere in the program.  Dictionaries and structs are examples of aggregations.  In contrast, the sub-components of a &lt;em&gt;conglomeration&lt;/em&gt; lose their identity (to an extent) within the composition.  An implementation of multiple interfaces is a conglomeration because overlapping signatures within the interfaces are elevated to a single concrete implementation.  In an aggregation, the individual sub-components can persist outside of the composition, whereas the sub-components of a conglomeration exist only within the composition itself.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-csharp&#34;&gt;/* C# */
+// Aggregation - Subcomponents retain identity
+public class Person {
+    public string Name {get; set}
+    public Address HomeAddress {get; set;}
+}
+// Conglomeration - Subcomponents lose their identity within the composition
+public class ImAConglomeration : ThingA, ThingB, ThingC {
+    @Override
+    public A MethodA(){ /* Implementation details */ }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The next two types of composition follow a more functional style.  Functions that return the same type as the primary parameter they operate on enable &lt;em&gt;chained&lt;/em&gt; composition, allowing several functions which operate on a single base value to be chained together to build up the desired effect.  The second type, &lt;em&gt;applicative&lt;/em&gt; composition, defines programs through nested function calls.  In this style, programs are executed from the inside out; first the parameters of a function are evaluated if necessary, then the function itself is called.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-csharp&#34;&gt;/* C# */
+// Chained - One value, the string, is passed through several transformations
+var result = &amp;quot;this-is-a-chain&amp;quot;.Replace(&#39;-&#39;, &#39; &#39;).ToUpper();
+
+// Application - Arguments are evaluated, then passed to the outer function
+public static class ApplicativeExample {
+    public static void Main(string[] args){
+        Console.WriteLine(
+           String.Join(&amp;quot;, &amp;quot;, args.Select((x) =&amp;gt; x.ToLower()).ToArray()));
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;concatenative-composition:8657397b7a825a5db528ba445c6f494f&#34;&gt;Concatenative Composition&lt;/h2&gt;
+
+&lt;p&gt;The applicative style described above is one type of function composition, where functions are evaluated with concrete parameters, passing their result as parameters to the next function, and so on.  It is possible, however, to compose functions without mentioning the parameters at all.  To illustrate this, consider the basic task of defining a function which filters a list then counts up the results.  In C#, it might look something like the following.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-csharp&#34;&gt;/* C# */
+public static int CountWhere&amp;lt;A&amp;gt;(IEnumerable&amp;lt;A&amp;gt; col, Func&amp;lt;A, bool&amp;gt; pred){
+    return col.Where(pred).Count();
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Notice how the function specifies not only what to do (filter then count), by how to do it.  The function explicitly names all of the parameters, maps which parameters belong to each function call, and calls the functions in the right order.  Expanding the task described above   to filter and stringify instead results in very similar code&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-csharp&#34;&gt;/* C# */
+public static string printWhere&amp;lt;A&amp;gt;(IEnumerable&amp;lt;A&amp;gt; col, Func&amp;lt;A, bool&amp;gt; pred {
+    return col.Where(pred).ToString();
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The majority of the code is exactly the same, specifying how to map parameters and outputs.  Each new composition we define requires this same pattern to be repeated.  We could define a helper function to map the parameters appropriately&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-csharp&#34;&gt;/* C# */
+public static Func&amp;lt;T1, T2, T4&amp;gt; Compose&amp;lt;T1, T2, T3&amp;gt;(Func&amp;lt;T1, T2, T3&amp;gt; f1, Func&amp;lt;T3, T4&amp;gt; f2){
+    return (paramT1, paramT2) =&amp;gt; f2(f1(paramT1, paramT2));
+}
+// If When and Count were defined nicely as Funcs
+var countWith = Compose(When, Count);
+countWith(new List(){1, 2, 3, 4}, (x) -&amp;gt; x%2==0);
+// returns 2
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;But we would have to redefine this helper function to compose functions with different numbers of parameters, for example to compose two unary functions.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-csharp&#34;&gt;public static Func&amp;lt;T1,T2, T3&amp;gt; Compose&amp;lt;T1, T2, T3&amp;gt;(Func&amp;lt;T1, T2&amp;gt; f1, Func&amp;lt;T2, T3&amp;gt; f2) {
+    return (paramT1) =&amp;gt; f2(f1(paramT1))
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;over and again for every combination of arities.  Certain types of programming languages, called concatenative languages, simplify this process.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-factor&#34;&gt;// Cat
+define countWith { filter count }
+[ 1 2 3 4 ] list [ 2 mod 0 eq ] countWith
+// returns 2
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;In concatenative languages, function composition is represented by simply placing the function names next to each other (or concatenating them, hence the name).  Because of how functions are defined and executed in these languages, no mention of parameters is necessary; the mapping between parameters and outputs is completely inferred.&lt;/p&gt;
+
+&lt;p&gt;There are obvious benefits to reducing code duplication, as mentioned above, using concatenative programming, but the same benefit could be achieved with some clever code generation to produce the necessary Compose functions or  by defining Compose using reflection to allow it to work with any combination of arguments (at the cost of compile-time type safety).  So, why write concatenative programs?&lt;/p&gt;
+
+&lt;h2 id=&#34;example-editing-in-vim:8657397b7a825a5db528ba445c6f494f&#34;&gt;Example: Editing in Vim&lt;/h2&gt;
+
+&lt;p&gt;The Vim text editor is a perfect example of where concatenative composition provides clear benefit.  It is undeniable that, despite many technological advances and inspite of any  internal flaws, Vim has and continues to be a very successful tool for editing code, in no small part because of it’s command system.&lt;/p&gt;
+
+&lt;p&gt;Vim is built around one core ideal: efficiency.  Vim and its predecessor, Vi, were designed to work efficiently over slow terminal connections, which might have significant latency when responding to individual keystrokes.  Due to this restriction, Vim incorporates a command mode, allow users to operate on arbitrary chunks of text, rather than on a character-by-character basis.  For example, the command &lt;code&gt;ciw&lt;/code&gt; deletes from the previous word (or newline) to the next word (or newline), leaving the white-space boundaries intact, and places the cursor where the beginning of where the word would have begun.
+This command, which is seemingly arbitrary to new users, is actually made up of three sub-components, &lt;code&gt;c&lt;/code&gt;, &lt;code&gt;i&lt;/code&gt;, and &lt;code&gt;w&lt;/code&gt; respectively, which have been composed with concatenation to form the resulting transformation.  The first component, &lt;code&gt;c&lt;/code&gt;, describes what we want to do; change the text.  The second component, &lt;code&gt;i&lt;/code&gt;, describes what portion of the text we want to effect, in this case the inside, preserving any white space boundaries.  Lastly, the &lt;code&gt;w&lt;/code&gt; specifies how to select the text from the current position, in this case by selecting the current “word”.&lt;/p&gt;
+
+&lt;p&gt;Most commands in Vim follow this pattern, specifying an Action, Description, and Target to act on.  By adhering to this pattern, Vim sub-commands benefit from unprecedented reusability.  To illustrate this, consider adding three new subcommands: the &lt;code&gt;d&lt;/code&gt; Action, which deletes but does not move the cursor, the &lt;code&gt;a&lt;/code&gt; Description, which specifies that we want to include the surrounding whitespace, and lastly the &lt;code&gt;s&lt;/code&gt; Target, which represents a sentence from one punctuation marking or newline to the next.  We can now concatenate any combination of available Actions, Descriptions, and Targets for predictable outcomes.&lt;/p&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Action&lt;/th&gt;
+&lt;th&gt;Description&lt;/th&gt;
+&lt;th&gt;Target&lt;/th&gt;
+&lt;th&gt;Result&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;C&lt;/td&gt;
+&lt;td&gt;I&lt;/td&gt;
+&lt;td&gt;W&lt;/td&gt;
+&lt;td&gt;Change inside word&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;C&lt;/td&gt;
+&lt;td&gt;I&lt;/td&gt;
+&lt;td&gt;S&lt;/td&gt;
+&lt;td&gt;Change inside sentence&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;C&lt;/td&gt;
+&lt;td&gt;A&lt;/td&gt;
+&lt;td&gt;W&lt;/td&gt;
+&lt;td&gt;Change around word&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;C&lt;/td&gt;
+&lt;td&gt;A&lt;/td&gt;
+&lt;td&gt;S&lt;/td&gt;
+&lt;td&gt;Change around sentence&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;D&lt;/td&gt;
+&lt;td&gt;I&lt;/td&gt;
+&lt;td&gt;W&lt;/td&gt;
+&lt;td&gt;Delete inside word&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;D&lt;/td&gt;
+&lt;td&gt;I&lt;/td&gt;
+&lt;td&gt;S&lt;/td&gt;
+&lt;td&gt;Delete inside sentence&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;D&lt;/td&gt;
+&lt;td&gt;A&lt;/td&gt;
+&lt;td&gt;W&lt;/td&gt;
+&lt;td&gt;Delete around word&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;D&lt;/td&gt;
+&lt;td&gt;A&lt;/td&gt;
+&lt;td&gt;S&lt;/td&gt;
+&lt;td&gt;Delete around sentence&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;So, with two actions, descriptions, and targets we can create eight separate commands.  Extrapolating this example, with three of each we would have 27 distinct commands, and with ten of each, 1,000 commands.  By learning the meaning of 30 “words” in Vim (Actions, Descriptions and Targets) we can construct 1,000 distinct “phrases” describing how we want to transform the text.  Even though modern terminal connections are fast enough to easily support much more complicated forms of editing, Vim is still a popular choice of text editor because of the flexibility of its command pattern .&lt;/p&gt;
+
+&lt;p&gt;In order to support this kind of combinatorial growth of commands, Vim utilizes concatenative combination as an evaluation strategy.  The evaluation loop in Vim waits to execute until a Target sub-component is input, optionally modifying the execution behavior according to some Description and Action by composing their effects.  This kind of evaluation strategy would quickly become cumbersome if either end-users or the developers of the system had to explicitly map parameters between compositions.  Instead, by relying on concatenative programming, the compositions become trivial to infer.&lt;/p&gt;
+
+&lt;h2 id=&#34;the-dark-side:8657397b7a825a5db528ba445c6f494f&#34;&gt;The dark side&lt;/h2&gt;
+
+&lt;p&gt;Concatenative composition does have some drawbacks.  Inferring the types of the functions involved and how to map inputs and outputs between them greatly reduces the amount of boilerplate code necessary define new functions, but also means that the programmer no longer has the visual cues provided by type information to describe what a composition does, relying instead on descriptive naming.&lt;/p&gt;
+
+&lt;p&gt;Further, most languages supporting concatenative programming do so using postfix stack-based transformations, which allow for a unified execution model and efficient execution.  In applicative languages, the order of parameters is given explicitly when a function is called.  In stack-based languages, all functions operate on a single parameter, the current stack, which contains the parameters needed by the function in order; that is, functions in stack-based languages assume the stack is in the correct order when they’re called.  This means that code must be organized around maintaining the proper stack order or, more commonly, must be decorated with additional code for the sole purpose of re-ordering the stack to meet the argument order expected by the next function call.&lt;/p&gt;
+
+&lt;p&gt;These two points, together, can lead to obfuscated code, especially for programmers new to concatenative and stack-based languages.  In these languages, the programmer is forced to keep track of how a series of functions composes in an abstract way, rather than how an individual function affects its inputs.  In the programming language Factor, the mathematical function &lt;code&gt;f( x y z ) = y2 + x2 − |y|&lt;/code&gt; becomes&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-factor&#34;&gt; // Factor
+: f [ drop dup dup × swap abs rot3 dup × swap − + ]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;due to the y parameter being used multiple times, the &lt;code&gt;z&lt;/code&gt; parameter not being used at all, and the inconsistency between the order the parameters are provided and the order they are used in the execution.  The majority of the definition is spent manipulating the stack, as opposed to performing any useful computation, making the function difficult to read.&lt;/p&gt;
+
+&lt;p&gt;To mitigate the first issue, many concatenative languages support stack effect annotations; a form of documentation for noting what the top of the stack looks like before and after a function call.  This idea has been expanded on in the Cat programming language to include support for full-fledged type inference, allowing programmers to either specify a desired type signature or to infer it.  For the second issue, many languages, including Factor, support named local parameters, allowing designers to selectively break the arguments-by-order convention on a case by case bases.  Using named local parameters, our example above becomes&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-factor&#34;&gt;// Factor
+:: f | x y z | y y * x x * + y abs - ;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Still not an exact match for the mathematical notation, but at least it’s clear what parameters are used with a given operation.&lt;/p&gt;
+
+&lt;h2 id=&#34;too-long-didn-t-read:8657397b7a825a5db528ba445c6f494f&#34;&gt;Too long; Didn’t read&lt;/h2&gt;
+
+&lt;p&gt;Like other forms of composition, concatenative composition can greatly reduce code duplication for certain types of programs.  Most popular modern languages, like Java and C#, can only emulate this style of composition through complex code generation or self-reflective runtime analysis.  Utilizing a concatenative programming language makes it possible to easily implement nested function compositions in a clear and concise way, enabling a distinct style of programming focused on how functions are combined, rather than how data flows between them.  By emulating the concatenative style, the Vim programming editor is able to implement commands in a combinatorial fashion, such that adding simple, new definitions of Actions, Descriptions, and Targets can lead to an exponential growth in the total number of commands recognized by the system.  Modern concatenative languages still require a significant shift in how programs are written and reasoned about, but continue to experiment with ways of easing the transition for new users.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Virginia Tech Recruiting 2013</title>
+      <link>http://axiomabsolute.github.com/2013/10/15/vt-recruiting-1</link>
+      <pubDate>Tue, 15 Oct 2013 00:00:00 +0000</pubDate>
+      
+      <guid>http://axiomabsolute.github.com/2013/10/15/vt-recruiting-1</guid>
+      <description>&lt;!-- excerpt-begin --&gt;
+
+&lt;p&gt;Sphere of Influence has been attending various career fairs at Virginia Tech for the last several years, looking for the best and brightest students to hire as interns and future full time employees.  We&amp;rsquo;ve found it difficult, however, to shape an interview process appropriate for students at various stages in their education.  This year we decided to do something to help fix that.
+&amp;lt;!&amp;ndash; excerpt-end &amp;ndash;&amp;gt;&lt;/p&gt;
+
+&lt;p&gt;Back in late July, about a month and a half before the event, I came up with the idea of trying to gather data on what technologies Virginia Tech students were being exposed to during their education, as well as their level of comfort with these technologies.  We&amp;rsquo;d tried to modify our interview process based on information available on the computer science department&amp;rsquo;s website,but found that by focusing mainly on coursework the interviews quickly became repetitive with little to distinguish between the students.  After all, every student had taken the required Data Structures and Algorithms course, implemented a Quadtree data structure and mapped out efficient bus routes for the same project.&lt;/p&gt;
+
+&lt;p&gt;We needed to find a way to differentiate between candidates, to find which questions actually mattered in the interview, the questions that separated the good from the great.&lt;/p&gt;
+
+&lt;p&gt;We needed &lt;em&gt;data&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://axiomabsolute.github.com/images/wordassoc.PNG&#34; alt=&#34;WordAssoc&#34; /&gt;
+&lt;/p&gt;
+
+&lt;p&gt;So I decided to create a game &amp;lt;!&amp;ndash; Link to game &amp;ndash;&amp;gt; for students to play while waiting to talk to us at the recruiting event.  To keep the game fast paced and interesting (as well as to gather as much data as possible), we decided to go with a word association game.  The format of the game is simple.  Students select what technologies they know from a preselected list of technologies the students might be familiar with that SOI is interested in.  The system then selects from key terms and phrases associated with the technologies the user selected and generates answers based on the type of term asked.  The user&amp;rsquo;s job, then, is to select which technology the term is associated with.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://axiomabsolute.github.com/images/wordassoc-question-sample.PNG&#34; alt=&#34;WordAssoc Question&#34; /&gt;
+&lt;/p&gt;
+
+&lt;p&gt;In addition to phrases tied to specific technologies, we included several phrases we&amp;rsquo;d expect candidates to recognize, from topics like Object-Oriented Programming, data structures, algorithm analysis, and basic programming terms.  Together with the user-selected technologies, this strategy ensured that users would get a customized game experience with a variety of questions across several topics.&lt;/p&gt;
+
+&lt;p&gt;Due to the relatively short development time (about 40 hours total of work, spread across weekends and spare time during the week) I chose to go with a language I knew well, Python, and a relatively light web framework called Flask for the backend.  The majority of the logic for interaction during game play occurs entirely on the client, written in JavaScript, to avoid the overhead of constant network traffic.  The whole thing was hosted on Heroku, a cloud-based Platform as a Service (PaaS) provider, with a PostgreSQL database to persist the results.&lt;/p&gt;
+
+&lt;p&gt;This was my first time using Heroku (or any PaaS provider) for anything more than a toy application or tutorial, and I have to say I was impressed by how easy it was to set up and use.  Deploying to Heroku was as easy as adding the database URL to the Flask config, pushing my code to a special repository, and refreshing the page!  After a few minutes more of fiddling I was able to configure Flask to fall back to using a SQLite3 database on my local machine for testing so I didn&amp;rsquo;t have to install Postgres.  At the end of the month it cost me all of $5.59 to host the application for a month.  Of that, $4.65 was a flat fee for using their hosted Postgres installation and the rest was from usage, mainly occurring on the day of the event.  Well worth it to avoid the hassle of setting up my own server!&lt;/p&gt;
+
+&lt;p&gt;But what good is a game without motivation, though?  Each question the player answered correctly contributed to their overall score, while wrong answers counted against them.  At the end of the day, the player with the highest score won an iPad mini; the same device that they were using to play the game on!  In addition, every player is able to view the source for the game, an anonymized result dataset, and any analysis we&amp;rsquo;ve done on the data.  Here&amp;rsquo;s a peek at some of the results we found:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://axiomabsolute.github.com/images/VTFeedbackInfographic.png&#34; alt=&#34;Infographic&#34; /&gt;
+&lt;/p&gt;
+
+&lt;p&gt;I chose to do the analysis in an interactive Python session using the Numpy and Matplotlib libraries.  I saved off the various data as JSON and used the fantastic JavaScript library D3.js to generate SVG files for the custom visualizations.  Finally, I imported the visualizations into the Inkscape SVG editor to lay them out, provide contextual information, and style everything.  I would have liked to dig deeper into the data and pull out a few more statistics to drive the visualization further, but this was my first infographic and so my progress was a little slow, and I wanted to get this out since we&amp;rsquo;re now a month past the event and starting to do interviews.&lt;/p&gt;
+
+&lt;p&gt;Most of the data in the infographic is relatively basic: statistics on accuracy broken down by various question categories, technologies, that kind of thing.  There were two results that I found very interesting.&lt;/p&gt;
+
+&lt;p&gt;The first was how much phrasing the question mattered.  In one of the question categories, students were asked to associate a real-life scenario with the data structure that best represents it.  The scenarios associated with a HashMap were a dictionary, a phone book, and an index.  Students were much more likely to associate a dictionary or phone book with the Map data structure than an index.  This is something that psychologists and statisticians have long understood, but it was striking to see such a blatant example in the result data.&lt;/p&gt;
+
+&lt;p&gt;The second interesting result was the list of question topics we generated at the bottom of the infographic.  Recall that the point of this exercise was to gather data to help us improve our interview process for college students.  I took the approximately 500 questions the students answered, calculated the average accuracy by question, and sorted them by that accuracy value.  My intuition for selecting topics was similar to performing binary search.&lt;/p&gt;
+
+&lt;p&gt;Given the full pool of candidates, we&amp;rsquo;d like to ask a question that approximately divides the candidates in half, that is, a question with around 50% accuracy.  We then ask the successful candidates another question with a close to 50% accuracy, further subdividing the pool of potential candidates.  We keep performing this process until we reach a reasonably sized pool of candidates to interview.&lt;/p&gt;
+
+&lt;p&gt;This of course assumes that the ideal candidate would correctly answer every question we asked, and that set potential candidates still has around a 50% chance to correctly answer the next questions at every stage, which is absurd.  Asking a question about generators, a key concept in Python programming, to a programmer who&amp;rsquo;s only ever used C# and C++ would be a little unfair.  So, instead of eliminating candidates at each step we average their results across the various steps, with the idea that the ideal candidate should be able to answer &lt;em&gt;most&lt;/em&gt; of the questions correctly.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Easy Jekyll Excerpts with Liquid Filters</title>
+      <link>http://axiomabsolute.github.com/2013/06/09/jekyll-excerpts</link>
+      <pubDate>Sun, 09 Jun 2013 00:00:00 +0000</pubDate>
+      
+      <guid>http://axiomabsolute.github.com/2013/06/09/jekyll-excerpts</guid>
+      <description>&lt;p&gt;Go ahead and look at this page&amp;rsquo;s source.  Go on, do it! Notice the little excerpt comments?&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-html&#34;&gt;    &amp;lt;!-- excerpt-begin --&amp;gt;
+
+    &amp;lt;!-- excerpt-end --&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;The original version of this article was written built with Jekyll.  This method is no longer used in the blog for generating excerpts.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;!-- excerpt-begin --&gt;
+
+&lt;p&gt;Early on in my journey to learn &lt;a href=&#34;http://jekyllrb.com/&#34;&gt;Jekyll&lt;/a&gt;, sleep deprived but determined to figure out what all the fuss was about, I decided that I wanted a way to indicate small sections of each post to feature on the main page.  A quick Google search pointed me to a couple of Jekyll plugins that would get the job done, but &lt;a href=&#34;http://foldl.me/2012/jekyll-excerpts/&#34;&gt;one guy&lt;/a&gt; mentioned another possible solution; &lt;a href=&#34;https://github.com/Shopify/liquid/wiki/Liquid-for-Designers&#34;&gt;Liquid Filters&lt;/a&gt;.
+&amp;lt;!&amp;ndash; excerpt-end &amp;ndash;&amp;gt;&lt;/p&gt;
+
+&lt;p&gt;Liquid is a secure, stateless template engine used by Jekyll to provide basic logic and looping behavior to the static pages it generates.  In addition, Liquid includes filters - operations for manipulating both numerical and string based content.  The original functionality described in the post was eventually added as a built in feature of Jekyll; the parser looks for all text up until the first occurrance of &lt;code&gt;excerpt_separator&lt;/code&gt; (a YAML front-matter property which defaults to &lt;code&gt;\n\n&lt;/code&gt;) and sets that to the post&amp;rsquo;s &lt;code&gt;excerpt&lt;/code&gt; property.  I decided to expand on the concept the author outlined to provide slightly different functionality.&lt;/p&gt;
+
+&lt;p&gt;The first thing I did was add a second tag, allowing the excerpt to appear anywhere in the page.  Notice that in this page, the excerpt isn&amp;rsquo;t right at the beginning of the page, but can potentially come after other content, like a graphic or, in this case, a small code block.&lt;/p&gt;
+
+&lt;p&gt;Extracting the excerpts for the main page was as simple as filtering the content down to the section I wanted by looking for the tags.  No plugins, no custom code, just a bit of convention!  Knowing my habits, however, at some point I&amp;rsquo;ll forget to add the &lt;code&gt;&amp;lt;!-- excerpt-* --&amp;gt;&lt;/code&gt; tags, so I decided to add some default behavior, truncating the content after a certain number of words.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-html&#34;&gt;    {% raw %}
+    {% if post.content contains &#39;&amp;lt;!-- excerpt-begin --&amp;gt;&#39; &amp;amp;&amp;amp; post.content contains &#39;&amp;lt;!-- excerpt-end --&amp;gt;&#39; %}
+        &amp;lt;div class=&amp;quot;row&amp;quot;&amp;gt;
+            &amp;lt;div class=&amp;quot;small-12 large-12 columns&amp;quot;&amp;gt;
+                &amp;lt;p&amp;gt;&amp;lt;em&amp;gt;excert&amp;lt;/em&amp;gt;&amp;lt;/p&amp;gt;
+            &amp;lt;/div&amp;gt;
+        &amp;lt;/div&amp;gt;
+        &amp;lt;div class=&amp;quot;row&amp;quot;&amp;gt;
+            &amp;lt;div class=&amp;quot;small-12 large-12 columns&amp;quot;&amp;gt;
+                {{ post.content | split: &#39;&amp;lt;!-- excerpt-begin --&amp;gt;&#39; | last | split: &#39;&amp;lt;!-- excerpt-end --&amp;gt;&#39; | first }}
+            &amp;lt;/div&amp;gt;
+        &amp;lt;/div&amp;gt;
+        &amp;lt;div class=&amp;quot;row&amp;quot;&amp;gt;
+            &amp;lt;div class=&amp;quot;small-12 large-12 columns&amp;quot;&amp;gt;
+                &amp;lt;p&amp;gt;&amp;lt;em&amp;gt;&amp;lt;a href=&amp;quot;{{ post.url }}&amp;quot;&amp;gt;full article&amp;lt;/a&amp;gt;&amp;lt;/em&amp;gt;&amp;lt;/p&amp;gt;
+            &amp;lt;/div&amp;gt;
+        &amp;lt;/div&amp;gt;
+    {% else %}
+        &amp;lt;div class=&amp;quot;row&amp;quot;&amp;gt;
+            &amp;lt;div class=&amp;quot;small-12 large-12 columns&amp;quot;&amp;gt;
+                {% if post.truncate %}
+                    &amp;lt;p&amp;gt;{{ post.content | truncatewords: post.truncate }}&amp;lt;/p&amp;gt;
+                {% else %}
+                    &amp;lt;p&amp;gt;{{ post.excerpt }}&amp;lt;/p&amp;gt;
+                {% endif %}
+                &amp;lt;em&amp;gt;&amp;lt;a href=&amp;quot;{{ post.url }}&amp;quot;&amp;gt;continue...&amp;lt;/a&amp;gt;&amp;lt;/em&amp;gt;&amp;lt;/p&amp;gt;
+            &amp;lt;/div&amp;gt;
+        &amp;lt;/div&amp;gt;
+    {% endif %}
+    {% if forloop.index != forloop.length %}
+        &amp;lt;hr/&amp;gt;
+    {% endif %}
+    {% endraw %}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;To make this behavior a little more configurable, a little logic around the truncation method first looks for a &lt;code&gt;truncate&lt;/code&gt; variable defined in the post&amp;rsquo;s YAML front-matter.  Finally, if that&amp;rsquo;s not found, it falls back to the default &lt;code&gt;excerpt&lt;/code&gt; functionality.&lt;/p&gt;
+
+&lt;p&gt;Using this technique, we can choose what content to include in the excerpt, including not just text but fully formatted portions of the overall post, including images and other media.  We could even use this technique to create a custom excerpt for the post that doesn&amp;rsquo;t appear anywhere in the article itself, like creating a custom tag line to grab the readers attention, selectively displaying the content in the &lt;code&gt;excerpt-*&lt;/code&gt; block by comparing the &lt;code&gt;page.url&lt;/code&gt; to the &lt;code&gt;post.url&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;When displaying anything but very basic HTML with this technique, you have to be a little careful.  The content of the tag block is pulled, but not the &lt;em&gt;styles&lt;/em&gt; applied outside of inline styles, which can lead to content being awkwardly layed out or displayed.  A simple way to mitigate this risk is to stick to site-wide styles, such as those referenced by the default layout or provided by the underlying client side framework (in my case, the &lt;a href=&#34;http://foundation.zurb.com/&#34;&gt;Foundation&lt;/a&gt; framework).&lt;/p&gt;
+
+&lt;p&gt;I&amp;rsquo;m just getting started with Jekyll, but I&amp;rsquo;m beginning to appreciate the relative simplicity at the core of its philosophy.  I&amp;rsquo;m interested to see how far the community will push this new wave of interest in static websites, and what lessons they&amp;rsquo;ve yet to learn from the forefathers of the web, before the advent dynamic sites.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Response - I Wish Ruby Had Interfaces</title>
+      <link>http://axiomabsolute.github.com/post/2013/03/08/response-ruby-interfaces/</link>
+      <pubDate>Fri, 08 Mar 2013 00:00:00 +0000</pubDate>
+      
+      <guid>http://axiomabsolute.github.com/post/2013/03/08/response-ruby-interfaces/</guid>
+      <description>
+
+&lt;p&gt;This post is written in response to a &lt;a href=&#34;http://victorsavkin.com/post/44861723903/i-wish-ruby-had-interfaces&#34;&gt;blog post&lt;/a&gt; about the role of documentation and types in interface definition.&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;The only thing we can tell for sure is that the function takes two arguments. We can guess the types. Maybe the first one is a string and the second one is a configuration hash/object. But it is just a guess and we might be wrong. We have no idea what options go into the settings object (neither their names nor their types) or what this function returns.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;There is no way we can call this function without checking the source code or the documentation. Everyone who advocates checking the source code does not understand why we have functions and classes. They can be used without us knowing anything about their implementation.&lt;/p&gt;
+
+&lt;p&gt;This seems to imply something very dangerous to me; that satisfying the type checker is sufficient to use an object that implements a given interface. Satisfying the type checker is enough to get your program to compile and run, but it means absolutely nothing in terms of program correctness, after all, there&amp;rsquo;s still the possibility of runtimes errors or, worse, an unexpected result that does not produce an error at all.&lt;/p&gt;
+
+&lt;h2 id=&#34;shall-i-comparetheeto-a-summer-s-day:e21f688523447a707417b51649d8c452&#34;&gt;Shall I compareTheeTo a Summer&amp;rsquo;s Day?&lt;/h2&gt;
+
+&lt;p&gt;Consider the following well known Java interface&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;interface Comparable {
+ int compareTo(T);
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The following class perfectly satisfies this interface in terms of the types required&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;class ReallyBadComparable implements Comparable&amp;lt;Object&amp;gt; {
+    public int compareTo(Object o){return -234;}
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;But the result is absolute rubish. We can guess what the method compareTo is supposed to do. We can guess that there is some meaning to the type of the return value, that negative, zero, and positive values have some additional meaning, but as the author said, this is just a guess and we might be completely wrong. The addition of type information guarentees the program will run, but not that the result will have any meaning. Without further documentation, we have no way of knowing what this return type means.&lt;/p&gt;
+
+&lt;p&gt;There is an entire &lt;em&gt;implicit interface&lt;/em&gt; defined in the documentation that is not at all enforced by the type signature. For example, while not required, it is usually assumed that the compareTo method is consistent with equals, that is, that if &lt;code&gt;e1.compareTo(e2) == 0&lt;/code&gt; then &lt;code&gt;e1.equals(e2)&lt;/code&gt;. Further, it is assumed that if &lt;code&gt;e1.compareTo(e2)&lt;/code&gt; is negative, then &lt;code&gt;e2.compareTo(e1)&lt;/code&gt; will be positive, otherwise we get mathematically contradictory results like &lt;code&gt;( 2.compareTo(3) &amp;lt; 0 ) &amp;amp;&amp;amp; ( 3.compareTo(2) &amp;lt; 0 )&lt;/code&gt;. But this shows up nowhere in the type definitions.&lt;/p&gt;
+
+&lt;p&gt;You could argue that this interface is poorly designed and that the type signature could be more expressive; that returning an integer instead of something like an enum is misleading, but I offer two counter arguments to that. First, as a developer using a library, if you knew nothing about the implicit contract of Comparable, how would you know it&amp;rsquo;s poorly designed? Regardless of what the type signature is, it provides no indication of the quality of the API&amp;rsquo;s design. You&amp;rsquo;ll have to look at the documentation, implementation, and/or tests to gain some gauge of the quality, or blindly trust the library&amp;rsquo;s author.&lt;/p&gt;
+
+&lt;p&gt;Secondly, how would you redesign this interface? Refactoring &lt;code&gt;compareTo&lt;/code&gt; to return an enum does distinguish the return type from a general integer, but we&amp;rsquo;re still left to guess at what the enumeration means, since the only thing we have to distinguish between the integer 1 and the enum value &lt;code&gt;xGreaterThanY&lt;/code&gt; is the name, which we&amp;rsquo;ve already established is based on a (potentially faulty) guess. Put another way, what distinguishes the following two interfaces?&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;interface CartesianCoordinate {
+double x;
+double y;
+ }
+ 
+interface GeoCoordinate {
+  double latitude;
+  double longitude;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Structurally, these interfaces are identical and interchangeable, they differ only in name. But GeoCoordinates are typically only defined between certain ranges (&lt;code&gt;[-180,180]&lt;/code&gt; and &lt;code&gt;[-90,90]&lt;/code&gt; for latitude and longitude respectively, I believe). We could try to codify these restrictions into the type system, creating a new type for deciamlDegree values, but again, the type signature for this will tell you nothing except that it&amp;rsquo;s a double!&lt;/p&gt;
+
+&lt;h2 id=&#34;types-we-need-more-types:e21f688523447a707417b51649d8c452&#34;&gt;Types! We need more types!&lt;/h2&gt;
+
+&lt;p&gt;Okay, so how about this, we&amp;rsquo;ll include these types of restrictions so that an interface&amp;rsquo;s type signature completely defines all possible values of that interface, that way we know, JUST from the type signature what&amp;rsquo;s going on. Easy (if you accept my made up syntax of &lt;code&gt;type name : restriction&lt;/code&gt;)!&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;interface GeoCoordinate {
+ double latitude : -180 &amp;lt;= latitude &amp;lt;= 180;
+ double longitude : -90 &amp;lt;= longitude &amp;lt;= 90;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Sweet! See how easy that is. Now let&amp;rsquo;s write an interface to represent a URL. Great! We can use regular expressions to define what the set of possible URLs &lt;a href=&#34;http://blog.mattheworiordan.com/post/13174566389/url-regular-expression-for-links-with-or-without-the&#34;&gt;looks like&lt;/a&gt;.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;interface URL {
+  String url: url.matches(&amp;quot;...&amp;quot;); // Look at the link above to see what this mess looks like...
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The problem is, you end up embedding the documentation, and in this case, a much less readable version of the entire standard for defining URIs, into the type signature.&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Types help define an interface of a function or a class.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;This quote I can agree with. Types do &lt;em&gt;help&lt;/em&gt; define an interface, but they&amp;rsquo;re only part of the definition.  Claiming that you can successfully use an interface based on it&amp;rsquo;s type signature alone? I&amp;rsquo;ll stick with reading the documentation.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
