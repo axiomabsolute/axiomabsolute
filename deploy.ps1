@@ -5,6 +5,7 @@ param (
 Write-Output "Deploying updates to GitHub..."
 hugo -t axiom
 
+cd public
 git add -A
 
 if ($msg) {
@@ -16,4 +17,4 @@ if ($msg) {
 git commit -m "$outmsg"
 
 git push origin master
-git subtree push --prefix=public https://github.com/axiomabsolute/axiomabsolute.github.io.git gh-pages
+cd ..
