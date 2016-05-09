@@ -1,7 +1,7 @@
 ---
 date: '2013-06-09'
 title: Easy Jekyll Excerpts with Liquid Filters
-url: /2013/06/09/jekyll-excerpts
+slug: /2013/06/09/jekyll-excerpts
 ---
 
 Go ahead and look at this page's source.  Go on, do it! Notice the little excerpt comments?

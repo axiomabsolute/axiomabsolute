@@ -4,7 +4,7 @@ encoding: ibm437
 subtitle: How editing in Vim is like writing a program in Forth
 title: Composition through Concatenation
 truncate: 80
-url: /2014/06/15/composition-through-concatenation
+slug: /2014/06/15/composition-through-concatenation
 ---
 
 

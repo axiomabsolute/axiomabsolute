@@ -1,7 +1,7 @@
 ---
 date: '2013-10-15'
 title: Virginia Tech Recruiting 2013
-url: /2013/10/15/vt-recruiting-1
+slug: /2013/10/15/vt-recruiting-1
 ---
 
 

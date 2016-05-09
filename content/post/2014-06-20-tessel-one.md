@@ -3,7 +3,7 @@ date: '2014-06-20'
 subtitle: A programmer's foray into embedded systems
 title: Getting Started with Tessel
 truncate: 80
-url: /2014/06/20/tessel-one
+slug: /2014/06/20/tessel-one
 ---
 
 

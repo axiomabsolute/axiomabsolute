@@ -2,7 +2,7 @@
 date: '2016-05-09'
 title: Layout Components in Ember
 truncate: 80
-slug: 2016/05/09/layout-components
+slug: /2016/05/09/layout-components
 draft: true
 ---
 
@@ -19,5 +19,5 @@ draft: true
 3. Review
     a. Satisfies requirements
     b. Hard to debug when things go wrong
-    c. String-y
+    c. String-based black magic
 ```

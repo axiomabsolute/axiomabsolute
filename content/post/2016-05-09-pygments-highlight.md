@@ -2,7 +2,7 @@
 date: '2016-05-09'
 title: New Syntax Highlighting
 truncate: 80
-slug: 2016/05/09/pygments-highlight
+slug: /2016/05/09/pygments-highlight
 ---
 
 I'm a programmer.  Most, if not all, of my posts contain snippets of code.  Most programmers prefer to read code with some form of syntax-based highlighting, myself included, making it an essential feature of any blogging platform.
