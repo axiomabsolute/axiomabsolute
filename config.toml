@@ -4,7 +4,11 @@ author = "AxiomAbsolute"
 contentdir = "content"
 publishdir = "public"
 description = "Thoughts on programming, language, and maths"
-metaDataFormat= "toml"
+metaDataFormat = "toml"
+PygmentsStyle = "lovelace"
+PygmentsCodeFences = true
+PygmentOptions = "style=colorful,linenos=inline"
+
 
 [indexes]
   category = "categories"
