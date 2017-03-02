@@ -1,0 +1,221 @@
+<html>
+  <head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+  * {
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;
+  }
+
+   
+
+  .callout {
+    width: 100%;
+    height: 100%;
+    color: #EEE;
+    display: table;
+  }
+
+  .callout-panel {
+    border-radius: 4px;
+    background-color: rgba(0,0,0, .25);
+    margin: 0 auto;
+    padding: 20px;
+  }
+
+  .callout-panel a {
+    color: white;
+  }
+
+  .callout-panel a:visited {
+    color: white;
+  }
+
+  .callout-panel_title {
+    text-align: center;
+  }
+
+  .callout-panel_description {
+    text-align: center;
+  }
+
+  .callout-wrapper {
+    display: table-cell;
+    vertical-align: middle;
+    position: relative;
+  }
+
+  .callout a {
+    color: #EEE;
+  }
+
+  .blog, .landing {
+    background-image: url("/images/background-lowres.jpg");
+    background-size: cover;
+  }
+
+  .content {
+    height: 100%;
+    overflow: auto;
+    box-sizing: border-box;
+    padding: 2em 0;
+  }
+
+  .post, .post-summary {
+    background: white;
+    padding: 0 2em;
+  }
+
+  .post-meta {
+    color: #999;
+    font-size: 90%;
+    margin: 0;
+  }
+
+
+  .pure-button.see-through {
+    background-color: rgba(0,0,0,0);
+    color: white;
+    border: 1px solid white;
+    border-radius: 10px;
+  }
+
+  .pure-button.see-through:visited {
+    color: white;
+  }
+
+  .pure-button.see-through:hover {
+    background-color: rgba(255,255,255,.2);
+  }
+
+  .nav {
+    margin-top: 16px;
+  }
+
+  .social-links {
+    padding-top: 3px;
+  }
+
+  .nav-link, .social-link {
+    margin: 0 5px;
+  }
+
+   
+  .right {
+    float: right;
+  }
+
+  .fa-2 {
+    font-size: 2em;
+  }
+
+   
+
+  @media screen and (max-width: 48em) {
+    .content {
+      height: auto;
+      padding-top: 0;
+    }
+    .blog {
+      background-image: none;
+    }
+    .sidebar {
+      background-image: url("/images/banner-lowres.jpg");
+      background-size: cover;
+    }
+    .callout {
+      height: auto;
+    }
+    .callout-wrapper {
+      padding: 0;
+    }
+    .callout-panel {
+      max-width: 100%;
+    }
+    .callout-panel_description {
+      display: none;
+    }
+    .landing {
+      height: 100%;
+    }
+  }
+
+   
+
+  article {
+    max-width: 900px;
+  }
+
+  a {
+    color: #3b8bba;
+    text-decoration: none;
+  }
+
+  a:visited {
+    color: #265778;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+</style>
+  <link rel="stylesheet" href="/css/main.css">
+</head>
+  <body>
+    <div class="pure-g blog">
+      <div class="pure-u-1 pure-u-md-8-24 pure-u-xl-6-24">
+      <div class="sidebar">
+  <div class="callout">
+  <div class="callout-wrapper">
+    <div class="callout-panel">
+      <h1 class="callout-panel_title">
+        <a href="/"  title="link to homepage for Axiom Absolute">Axiom Absolute</a>
+      </h1>
+      <div class="callout-panel_description">
+          Thoughts on programming, language, and maths  
+      </div>
+      <div class="callout-panel_navigation">
+        <div class="nav pure-g">
+          <div class="nav-links pure-u-1-2">
+            <a class="nav-link pure-button see-through right" href="/post">Blog</a>
+          </div>
+          <div class="social-links pure-u-1-2">
+            <a class="social-link fa-2" href="http://github.com/axiomabsolute"><i class="icon-github-squared"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+      </div>
+      <div class="pure-u-1 pure-u-md-16-24 pure-u-xl-18-24">
+<div class="content">
+  <div class="pure-g post-summary">
+    <div class="pure-u-1">
+      <article class="post">
+          <h1>A New Blog </h1>
+          <p class="post-meta">Sun, Nov 22, 2015 - Read in 1 Min </p>
+          <p>I&rsquo;m making a second attempt at getting this blog up and running.</p>
+
+<p>I had recurring issues with running Jekyll on windows; setting up Ruby, compiling modules from source, struggling with missing Visual C++ compilers.  I needed something easier.</p>
+
+<p>After playing around with <a href="http://harpjs.com/">Harp</a> (not quite flexible enough), <a href="https://hexo.io/">Hexo</a> (too much overhead from Node.js on windows), and a few others, I settled on <a href="https://gohugo.io/">Hugo</a>.</p>
+
+          <footer>
+          </footer>
+          <hr class="post-divider">
+      </article>
+    </div>
+  </div>
+</div>
+      </div>
+    </div>
+      <link rel="stylesheet" href="/css/axiom-embedded.css">
+  <link rel="stylesheet" href="/css/pure-0.6.2-min.css">
+
+  </body>
+</html>

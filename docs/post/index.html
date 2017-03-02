@@ -1,0 +1,347 @@
+<html>
+  <head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+  * {
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;
+  }
+
+   
+
+  .callout {
+    width: 100%;
+    height: 100%;
+    color: #EEE;
+    display: table;
+  }
+
+  .callout-panel {
+    border-radius: 4px;
+    background-color: rgba(0,0,0, .25);
+    margin: 0 auto;
+    padding: 20px;
+  }
+
+  .callout-panel a {
+    color: white;
+  }
+
+  .callout-panel a:visited {
+    color: white;
+  }
+
+  .callout-panel_title {
+    text-align: center;
+  }
+
+  .callout-panel_description {
+    text-align: center;
+  }
+
+  .callout-wrapper {
+    display: table-cell;
+    vertical-align: middle;
+    position: relative;
+  }
+
+  .callout a {
+    color: #EEE;
+  }
+
+  .blog, .landing {
+    background-image: url("/images/background-lowres.jpg");
+    background-size: cover;
+  }
+
+  .content {
+    height: 100%;
+    overflow: auto;
+    box-sizing: border-box;
+    padding: 2em 0;
+  }
+
+  .post, .post-summary {
+    background: white;
+    padding: 0 2em;
+  }
+
+  .post-meta {
+    color: #999;
+    font-size: 90%;
+    margin: 0;
+  }
+
+
+  .pure-button.see-through {
+    background-color: rgba(0,0,0,0);
+    color: white;
+    border: 1px solid white;
+    border-radius: 10px;
+  }
+
+  .pure-button.see-through:visited {
+    color: white;
+  }
+
+  .pure-button.see-through:hover {
+    background-color: rgba(255,255,255,.2);
+  }
+
+  .nav {
+    margin-top: 16px;
+  }
+
+  .social-links {
+    padding-top: 3px;
+  }
+
+  .nav-link, .social-link {
+    margin: 0 5px;
+  }
+
+   
+  .right {
+    float: right;
+  }
+
+  .fa-2 {
+    font-size: 2em;
+  }
+
+   
+
+  @media screen and (max-width: 48em) {
+    .content {
+      height: auto;
+      padding-top: 0;
+    }
+    .blog {
+      background-image: none;
+    }
+    .sidebar {
+      background-image: url("/images/banner-lowres.jpg");
+      background-size: cover;
+    }
+    .callout {
+      height: auto;
+    }
+    .callout-wrapper {
+      padding: 0;
+    }
+    .callout-panel {
+      max-width: 100%;
+    }
+    .callout-panel_description {
+      display: none;
+    }
+    .landing {
+      height: 100%;
+    }
+  }
+
+   
+
+  article {
+    max-width: 900px;
+  }
+
+  a {
+    color: #3b8bba;
+    text-decoration: none;
+  }
+
+  a:visited {
+    color: #265778;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+</style>
+  <link rel="stylesheet" href="/css/main.css">
+</head>
+  <body>
+    <div class="pure-g blog">
+      <div class="pure-u-1 pure-u-md-8-24 pure-u-xl-6-24">
+      <div class="sidebar">
+  <div class="callout">
+  <div class="callout-wrapper">
+    <div class="callout-panel">
+      <h1 class="callout-panel_title">
+        <a href="/"  title="link to homepage for Axiom Absolute">Axiom Absolute</a>
+      </h1>
+      <div class="callout-panel_description">
+          Thoughts on programming, language, and maths  
+      </div>
+      <div class="callout-panel_navigation">
+        <div class="nav pure-g">
+          <div class="nav-links pure-u-1-2">
+            <a class="nav-link pure-button see-through right" href="/post">Blog</a>
+          </div>
+          <div class="social-links pure-u-1-2">
+            <a class="social-link fa-2" href="http://github.com/axiomabsolute"><i class="icon-github-squared"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+      </div>
+      <div class="pure-u-1 pure-u-md-16-24 pure-u-xl-18-24">
+<div class="content">
+  <div class="pure-g post-summary">
+    
+      <div class="pure-u-1">
+        
+          <article class="post">
+    <h1><a href="/post/2016/05/09/pygments-highlight/">New Syntax Highlighting </a> </h1>
+    <p class="post-meta">Mon, May 9, 2016 - Read in 2 Min </p>
+    <p class="post-lead">
+        I&rsquo;m a programmer. Most, if not all, of my posts contain snippets of code. Most programmers prefer to read code with some form of syntax-based highlighting, myself included, making it an essential feature of any blogging platform.
+Until recently, I was using a client-based syntax highlighting solution, from prism.js. It worked well, was fantastically customizable, and supported a wide range of languages, but added significantly to the weight of each page.
+    </p>
+    <footer>
+        <a href='/post/2016/05/09/pygments-highlight/'>
+            <nobr>Read more →</nobr>
+        </a>
+    </footer>
+    <hr class="post-divider">
+</article>
+
+        
+      </div>
+    
+      <div class="pure-u-1">
+        
+          <article class="post">
+    <h1><a href="/post/2015/11/22/new-blog/">A New Blog </a> </h1>
+    <p class="post-meta">Sun, Nov 22, 2015 - Read in 1 Min </p>
+    <p class="post-lead">
+        I&rsquo;m making a second attempt at getting this blog up and running.
+I had recurring issues with running Jekyll on windows; setting up Ruby, compiling modules from source, struggling with missing Visual C++ compilers. I needed something easier.
+After playing around with Harp (not quite flexible enough), Hexo (too much overhead from Node.js on windows), and a few others, I settled on Hugo.
+    </p>
+    <footer>
+        <a href='/post/2015/11/22/new-blog/'>
+            <nobr>Read more →</nobr>
+        </a>
+    </footer>
+    <hr class="post-divider">
+</article>
+
+        
+      </div>
+    
+      <div class="pure-u-1">
+        
+          <article class="post">
+    <h1><a href="/post/2014/06/20/tessel-one/">Getting Started with Tessel </a> </h1>
+    <p class="post-meta">Fri, Jun 20, 2014 - Read in 5 Min </p>
+    <p class="post-lead">
+        I’m a software guy. I’ve taken the requisite college classes and understand how the programs I write eventually compile down to machine instructions and how they’re executed on the underlying hardware, but the idea of working directly with embedded systems for side projects at home has always been a little daunting. I haven’t touched C, C++, or similarly low-level languages in several years, and haven’t had much cause in my professional work to look into embedded devices, but learning to work on these types of platforms has always had a kind of mysterious allure for me.
+    </p>
+    <footer>
+        <a href='/post/2014/06/20/tessel-one/'>
+            <nobr>Read more →</nobr>
+        </a>
+    </footer>
+    <hr class="post-divider">
+</article>
+
+        
+      </div>
+    
+      <div class="pure-u-1">
+        
+          <article class="post">
+    <h1><a href="/post/2014/06/15/composition-through-concatenation/">Composition through Concatenation </a> </h1>
+    <p class="post-meta">Sun, Jun 15, 2014 - Read in 10 Min </p>
+    <p class="post-lead">
+        Composition is a key aspect of successful design, both in art and engineering. Breaking creations down into smaller, reusable patterns lends familiarity to novel designs, providing both a starting point and guiding path for evolving new user experiences. The value of composition is especially apparent in software engineering, where both the costs of developing as well as maintaining and improving an application over time have a significant impact on the lifetime profitability of the product.
+    </p>
+    <footer>
+        <a href='/post/2014/06/15/composition-through-concatenation/'>
+            <nobr>Read more →</nobr>
+        </a>
+    </footer>
+    <hr class="post-divider">
+</article>
+
+        
+      </div>
+    
+      <div class="pure-u-1">
+        
+          <article class="post">
+    <h1><a href="/post/2013/10/15/vt-recruiting-1/">Virginia Tech Recruiting 2013 </a> </h1>
+    <p class="post-meta">Tue, Oct 15, 2013 - Read in 6 Min </p>
+    <p class="post-lead">
+        Sphere of Influence has been attending various career fairs at Virginia Tech for the last several years, looking for the best and brightest students to hire as interns and future full time employees. We&rsquo;ve found it difficult, however, to shape an interview process appropriate for students at various stages in their education. This year we decided to do something to help fix that. Back in late July, about a month and a half before the event, I came up with the idea of trying to gather data on what technologies Virginia Tech students were being exposed to during their education, as well as their level of comfort with these technologies.
+    </p>
+    <footer>
+        <a href='/post/2013/10/15/vt-recruiting-1/'>
+            <nobr>Read more →</nobr>
+        </a>
+    </footer>
+    <hr class="post-divider">
+</article>
+
+        
+      </div>
+    
+      <div class="pure-u-1">
+        
+          <article class="post">
+    <h1><a href="/post/2013/06/09/jekyll-excerpts/">Easy Jekyll Excerpts with Liquid Filters </a> </h1>
+    <p class="post-meta">Sun, Jun 9, 2013 - Read in 4 Min </p>
+    <p class="post-lead">
+        Go ahead and look at this page&rsquo;s source. Go on, do it! Notice the little excerpt comments?
+ &lt;!-- excerpt-begin --&gt; &lt;!-- excerpt-end --&gt;   The original version of this article was written built with Jekyll. This method is no longer used in the blog for generating excerpts.
+ Early on in my journey to learn Jekyll, sleep deprived but determined to figure out what all the fuss was about, I decided that I wanted a way to indicate small sections of each post to feature on the main page.
+    </p>
+    <footer>
+        <a href='/post/2013/06/09/jekyll-excerpts/'>
+            <nobr>Read more →</nobr>
+        </a>
+    </footer>
+    <hr class="post-divider">
+</article>
+
+        
+      </div>
+    
+      <div class="pure-u-1">
+        
+          <article class="post">
+    <h1><a href="/post/2013/03/08/response-ruby-interfaces/">Response - I Wish Ruby Had Interfaces </a> </h1>
+    <p class="post-meta">Fri, Mar 8, 2013 - Read in 5 Min </p>
+    <p class="post-lead">
+        This post is written in response to a blog post about the role of documentation and types in interface definition.
+ The only thing we can tell for sure is that the function takes two arguments. We can guess the types. Maybe the first one is a string and the second one is a configuration hash/object. But it is just a guess and we might be wrong. We have no idea what options go into the settings object (neither their names nor their types) or what this function returns.
+    </p>
+    <footer>
+        <a href='/post/2013/03/08/response-ruby-interfaces/'>
+            <nobr>Read more →</nobr>
+        </a>
+    </footer>
+    <hr class="post-divider">
+</article>
+
+        
+      </div>
+     
+  </div>
+</div>
+
+      </div>
+    </div>
+      <link rel="stylesheet" href="/css/axiom-embedded.css">
+  <link rel="stylesheet" href="/css/pure-0.6.2-min.css">
+
+  </body>
+</html>

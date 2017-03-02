@@ -1,0 +1,286 @@
+<html>
+  <head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+  * {
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;
+  }
+
+   
+
+  .callout {
+    width: 100%;
+    height: 100%;
+    color: #EEE;
+    display: table;
+  }
+
+  .callout-panel {
+    border-radius: 4px;
+    background-color: rgba(0,0,0, .25);
+    margin: 0 auto;
+    padding: 20px;
+  }
+
+  .callout-panel a {
+    color: white;
+  }
+
+  .callout-panel a:visited {
+    color: white;
+  }
+
+  .callout-panel_title {
+    text-align: center;
+  }
+
+  .callout-panel_description {
+    text-align: center;
+  }
+
+  .callout-wrapper {
+    display: table-cell;
+    vertical-align: middle;
+    position: relative;
+  }
+
+  .callout a {
+    color: #EEE;
+  }
+
+  .blog, .landing {
+    background-image: url("/images/background-lowres.jpg");
+    background-size: cover;
+  }
+
+  .content {
+    height: 100%;
+    overflow: auto;
+    box-sizing: border-box;
+    padding: 2em 0;
+  }
+
+  .post, .post-summary {
+    background: white;
+    padding: 0 2em;
+  }
+
+  .post-meta {
+    color: #999;
+    font-size: 90%;
+    margin: 0;
+  }
+
+
+  .pure-button.see-through {
+    background-color: rgba(0,0,0,0);
+    color: white;
+    border: 1px solid white;
+    border-radius: 10px;
+  }
+
+  .pure-button.see-through:visited {
+    color: white;
+  }
+
+  .pure-button.see-through:hover {
+    background-color: rgba(255,255,255,.2);
+  }
+
+  .nav {
+    margin-top: 16px;
+  }
+
+  .social-links {
+    padding-top: 3px;
+  }
+
+  .nav-link, .social-link {
+    margin: 0 5px;
+  }
+
+   
+  .right {
+    float: right;
+  }
+
+  .fa-2 {
+    font-size: 2em;
+  }
+
+   
+
+  @media screen and (max-width: 48em) {
+    .content {
+      height: auto;
+      padding-top: 0;
+    }
+    .blog {
+      background-image: none;
+    }
+    .sidebar {
+      background-image: url("/images/banner-lowres.jpg");
+      background-size: cover;
+    }
+    .callout {
+      height: auto;
+    }
+    .callout-wrapper {
+      padding: 0;
+    }
+    .callout-panel {
+      max-width: 100%;
+    }
+    .callout-panel_description {
+      display: none;
+    }
+    .landing {
+      height: 100%;
+    }
+  }
+
+   
+
+  article {
+    max-width: 900px;
+  }
+
+  a {
+    color: #3b8bba;
+    text-decoration: none;
+  }
+
+  a:visited {
+    color: #265778;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+</style>
+  <link rel="stylesheet" href="/css/main.css">
+</head>
+  <body>
+    <div class="pure-g blog">
+      <div class="pure-u-1 pure-u-md-8-24 pure-u-xl-6-24">
+      <div class="sidebar">
+  <div class="callout">
+  <div class="callout-wrapper">
+    <div class="callout-panel">
+      <h1 class="callout-panel_title">
+        <a href="/"  title="link to homepage for Axiom Absolute">Axiom Absolute</a>
+      </h1>
+      <div class="callout-panel_description">
+          Thoughts on programming, language, and maths  
+      </div>
+      <div class="callout-panel_navigation">
+        <div class="nav pure-g">
+          <div class="nav-links pure-u-1-2">
+            <a class="nav-link pure-button see-through right" href="/post">Blog</a>
+          </div>
+          <div class="social-links pure-u-1-2">
+            <a class="social-link fa-2" href="http://github.com/axiomabsolute"><i class="icon-github-squared"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+      </div>
+      <div class="pure-u-1 pure-u-md-16-24 pure-u-xl-18-24">
+<div class="content">
+  <div class="pure-g post-summary">
+    <div class="pure-u-1">
+      <article class="post">
+          <h1>Response - I Wish Ruby Had Interfaces </h1>
+          <p class="post-meta">Fri, Mar 8, 2013 - Read in 5 Min </p>
+          
+
+<p>This post is written in response to a <a href="http://victorsavkin.com/post/44861723903/i-wish-ruby-had-interfaces">blog post</a> about the role of documentation and types in interface definition.</p>
+
+<blockquote>
+<p>The only thing we can tell for sure is that the function takes two arguments. We can guess the types. Maybe the first one is a string and the second one is a configuration hash/object. But it is just a guess and we might be wrong. We have no idea what options go into the settings object (neither their names nor their types) or what this function returns.</p>
+</blockquote>
+
+<p>There is no way we can call this function without checking the source code or the documentation. Everyone who advocates checking the source code does not understand why we have functions and classes. They can be used without us knowing anything about their implementation.</p>
+
+<p>This seems to imply something very dangerous to me; that satisfying the type checker is sufficient to use an object that implements a given interface. Satisfying the type checker is enough to get your program to compile and run, but it means absolutely nothing in terms of program correctness, after all, there&rsquo;s still the possibility of runtimes errors or, worse, an unexpected result that does not produce an error at all.</p>
+
+<h2 id="shall-i-comparetheeto-a-summer-s-day">Shall I compareTheeTo a Summer&rsquo;s Day?</h2>
+
+<p>Consider the following well known Java interface</p>
+<div class="highlight" style="background: #ffffff"><pre style="line-height: 125%"><span></span><span style="color: #2838b0; font-style: italic">interface</span> <span style="color: #287088">Comparable</span> <span style="color: #666666">{</span>
+ <span style="color: #2838b0; font-style: italic">int</span> <span style="color: #785840">compareTo</span><span style="color: #666666">(</span>T<span style="color: #666666">);</span>
+<span style="color: #666666">}</span>
+</pre></div>
+
+<p>The following class perfectly satisfies this interface in terms of the types required</p>
+<div class="highlight" style="background: #ffffff"><pre style="line-height: 125%"><span></span><span style="color: #2838b0; font-style: italic">class</span> <span style="color: #287088">ReallyBadComparable</span> <span style="color: #2838b0; font-style: italic">implements</span> Comparable<span style="color: #666666">&lt;</span>Object<span style="color: #666666">&gt;</span> <span style="color: #666666">{</span>
+    <span style="color: #2838b0; font-style: italic">public</span> <span style="color: #2838b0; font-style: italic">int</span> <span style="color: #785840">compareTo</span><span style="color: #666666">(</span>Object o<span style="color: #666666">){</span><span style="color: #2838b0">return</span> <span style="color: #666666">-</span><span style="color: #444444">234</span><span style="color: #666666">;}</span>
+<span style="color: #666666">}</span>
+</pre></div>
+
+<p>But the result is absolute rubish. We can guess what the method compareTo is supposed to do. We can guess that there is some meaning to the type of the return value, that negative, zero, and positive values have some additional meaning, but as the author said, this is just a guess and we might be completely wrong. The addition of type information guarentees the program will run, but not that the result will have any meaning. Without further documentation, we have no way of knowing what this return type means.</p>
+
+<p>There is an entire <em>implicit interface</em> defined in the documentation that is not at all enforced by the type signature. For example, while not required, it is usually assumed that the compareTo method is consistent with equals, that is, that if <code>e1.compareTo(e2) == 0</code> then <code>e1.equals(e2)</code>. Further, it is assumed that if <code>e1.compareTo(e2)</code> is negative, then <code>e2.compareTo(e1)</code> will be positive, otherwise we get mathematically contradictory results like <code>( 2.compareTo(3) &lt; 0 ) &amp;&amp; ( 3.compareTo(2) &lt; 0 )</code>. But this shows up nowhere in the type definitions.</p>
+
+<p>You could argue that this interface is poorly designed and that the type signature could be more expressive; that returning an integer instead of something like an enum is misleading, but I offer two counter arguments to that. First, as a developer using a library, if you knew nothing about the implicit contract of Comparable, how would you know it&rsquo;s poorly designed? Regardless of what the type signature is, it provides no indication of the quality of the API&rsquo;s design. You&rsquo;ll have to look at the documentation, implementation, and/or tests to gain some gauge of the quality, or blindly trust the library&rsquo;s author.</p>
+
+<p>Secondly, how would you redesign this interface? Refactoring <code>compareTo</code> to return an enum does distinguish the return type from a general integer, but we&rsquo;re still left to guess at what the enumeration means, since the only thing we have to distinguish between the integer 1 and the enum value <code>xGreaterThanY</code> is the name, which we&rsquo;ve already established is based on a (potentially faulty) guess. Put another way, what distinguishes the following two interfaces?</p>
+<div class="highlight" style="background: #ffffff"><pre style="line-height: 125%"><span></span><span style="color: #2838b0; font-style: italic">interface</span> <span style="color: #287088">CartesianCoordinate</span> <span style="color: #666666">{</span>
+<span style="color: #2838b0; font-style: italic">double</span> x<span style="color: #666666">;</span>
+<span style="color: #2838b0; font-style: italic">double</span> y<span style="color: #666666">;</span>
+ <span style="color: #666666">}</span>
+ 
+<span style="color: #2838b0; font-style: italic">interface</span> <span style="color: #287088">GeoCoordinate</span> <span style="color: #666666">{</span>
+  <span style="color: #2838b0; font-style: italic">double</span> latitude<span style="color: #666666">;</span>
+  <span style="color: #2838b0; font-style: italic">double</span> longitude<span style="color: #666666">;</span>
+<span style="color: #666666">}</span>
+</pre></div>
+
+<p>Structurally, these interfaces are identical and interchangeable, they differ only in name. But GeoCoordinates are typically only defined between certain ranges (<code>[-180,180]</code> and <code>[-90,90]</code> for latitude and longitude respectively, I believe). We could try to codify these restrictions into the type system, creating a new type for deciamlDegree values, but again, the type signature for this will tell you nothing except that it&rsquo;s a double!</p>
+
+<h2 id="types-we-need-more-types">Types! We need more types!</h2>
+
+<p>Okay, so how about this, we&rsquo;ll include these types of restrictions so that an interface&rsquo;s type signature completely defines all possible values of that interface, that way we know, JUST from the type signature what&rsquo;s going on. Easy (if you accept my made up syntax of <code>type name : restriction</code>)!</p>
+
+<pre><code>interface GeoCoordinate {
+ double latitude : -180 &lt;= latitude &lt;= 180;
+ double longitude : -90 &lt;= longitude &lt;= 90;
+}
+</code></pre>
+
+<p>Sweet! See how easy that is. Now let&rsquo;s write an interface to represent a URL. Great! We can use regular expressions to define what the set of possible URLs <a href="http://blog.mattheworiordan.com/post/13174566389/url-regular-expression-for-links-with-or-without-the">looks like</a>.</p>
+
+<pre><code>interface URL {
+  String url: url.matches(&quot;...&quot;); // Look at the link above to see what this mess looks like...
+}
+</code></pre>
+
+<p>The problem is, you end up embedding the documentation, and in this case, a much less readable version of the entire standard for defining URIs, into the type signature.</p>
+
+<blockquote>
+<p>Types help define an interface of a function or a class.</p>
+</blockquote>
+
+<p>This quote I can agree with. Types do <em>help</em> define an interface, but they&rsquo;re only part of the definition.  Claiming that you can successfully use an interface based on it&rsquo;s type signature alone? I&rsquo;ll stick with reading the documentation.</p>
+
+          <footer>
+          </footer>
+          <hr class="post-divider">
+      </article>
+    </div>
+  </div>
+</div>
+      </div>
+    </div>
+      <link rel="stylesheet" href="/css/axiom-embedded.css">
+  <link rel="stylesheet" href="/css/pure-0.6.2-min.css">
+
+  </body>
+</html>
