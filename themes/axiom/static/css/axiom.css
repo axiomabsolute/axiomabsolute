@@ -1,154 +1,73 @@
-* {
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
+@font-face {
+  font-family: 'axiom';
+  src: url('../font/axiom.eot?78669473');
+  src: url('../font/axiom.eot?78669473#iefix') format('embedded-opentype'),
+       url('../font/axiom.woff2?78669473') format('woff2'),
+       url('../font/axiom.woff?78669473') format('woff'),
+       url('../font/axiom.ttf?78669473') format('truetype'),
+       url('../font/axiom.svg?78669473#axiom') format('svg');
+  font-weight: normal;
+  font-style: normal;
 }
-
-/* Blog Components */
-
-.callout {
-  width: 100%;
-  height: 100%;
-  color: #EEE;
-  display: table;
+/* Chrome hack: SVG is rendered more smooth in Windozze. 100% magic, uncomment if you need it. */
+/* Note, that will break hinting! In other OS-es font will be not as sharp as it could be */
+/*
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  @font-face {
+    font-family: 'axiom';
+    src: url('../font/axiom.svg?78669473#axiom') format('svg');
+  }
 }
-
-.callout-panel {
-  border-radius: 4px;
-  background-color: rgba(0,0,0, .25);
-  margin: 0 auto;
-  padding: 20px;
-}
-
-.callout-panel a {
-  color: white;
-}
-
-.callout-panel a:visited {
-  color: white;
-}
-
-.callout-panel_title {
+*/
+ 
+ [class^="icon-"]:before, [class*=" icon-"]:before {
+  font-family: "axiom";
+  font-style: normal;
+  font-weight: normal;
+  speak: none;
+ 
+  display: inline-block;
+  text-decoration: inherit;
+  width: 1em;
+  margin-right: .2em;
   text-align: center;
+  /* opacity: .8; */
+ 
+  /* For safety - reset parent styles, that can break glyph codes*/
+  font-variant: normal;
+  text-transform: none;
+ 
+  /* fix buttons height, for twitter bootstrap */
+  line-height: 1em;
+ 
+  /* Animation center compensation - margins should be symmetric */
+  /* remove if not needed */
+  margin-left: .2em;
+ 
+  /* you can be more comfortable with increased icons size */
+  /* font-size: 120%; */
+ 
+  /* Font smoothing. That was taken from TWBS */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+ 
+  /* Uncomment for 3D effect */
+  /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
 }
-
-.callout-panel_description {
-  text-align: center;
-}
-
-.callout-wrapper {
-  display: table-cell;
-  vertical-align: middle;
-  position: relative;
-}
-
-.callout a {
-  color: #EEE;
-}
-
-.blog, .landing {
-  background-image: url("/images/background-lowres.jpg");
-  background-size: cover;
-}
-
-.content {
-  height: 100%;
-  overflow: auto;
-  box-sizing: border-box;
-  padding: 2em 0;
-}
-
-.post, .post-summary {
-  background: white;
-  padding: 0 2em;
-}
-
-.post-meta {
-  color: #999;
-  font-size: 90%;
-  margin: 0;
-}
-
-
-.see-through {
-  background-color: rgba(0,0,0,0);
-  color: white;
-  border: 1px solid white;
-  border-radius: 10px;
-}
-
-.see-through:visited {
-  color: white;
-}
-
-.see-through:hover {
-  background-color: rgba(255,255,255,.2);
-}
-
-.nav {
-  margin-top: 16px;
-}
-
-.nav-link, .social-link {
-  margin: 0 5px;
-}
-
-/* Traits */
-.right {
-  float: right;
-}
-
-.fa-2 {
-  font-size: 2em;
-}
-
-/* Responsive */
-
-@media screen and (max-width: 48em) {
-  .content {
-    height: auto;
-    padding-top: 0;
-  }
-  .blog {
-    background-image: none;
-  }
-  .sidebar {
-    background-image: url("/images/banner-lowres.jpg");
-    background-size: cover;
-  }
-  .callout {
-    height: auto;
-  }
-  .callout-wrapper {
-    padding: 0;
-  }
-  .callout-panel {
-    max-width: 100%;
-  }
-  .callout-panel_description {
-    display: none;
-  }
-  .landing {
-    height: 100%;
-  }
-}
-
-/* Base Styles */
-
-article {
-  max-width: 900px;
-}
-
-a {
-  color: #3b8bba;
-  text-decoration: none;
-}
-
-a:visited {
-  color: #265778;
-}
-
-img {
-  max-width: 100%;
-  height: auto;
-}
+ 
+.icon-minus:before { content: '\e800'; } /* '' */
+.icon-plus:before { content: '\e801'; } /* '' */
+.icon-cog:before { content: '\e802'; } /* '' */
+.icon-down-open:before { content: '\e803'; } /* '' */
+.icon-left-open:before { content: '\e804'; } /* '' */
+.icon-right-open:before { content: '\e805'; } /* '' */
+.icon-up-open:before { content: '\e806'; } /* '' */
+.icon-spin4:before { content: '\e834'; } /* '' */
+.icon-link-ext:before { content: '\f08e'; } /* '' */
+.icon-github-circled:before { content: '\f09b'; } /* '' */
+.icon-menu:before { content: '\f0c9'; } /* '' */
+.icon-quote-right:before { content: '\f10e'; } /* '' */
+.icon-github:before { content: '\f113'; } /* '' */
+.icon-code:before { content: '\f121'; } /* '' */
+.icon-soundcloud:before { content: '\f1be'; } /* '' */
+.icon-github-squared:before { content: '\f300'; } /* '' */
